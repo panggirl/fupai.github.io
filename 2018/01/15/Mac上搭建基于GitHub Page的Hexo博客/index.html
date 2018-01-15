@@ -5,14 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>Mac上搭建基于GitHub Page的Hexo博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="[参考1]Mac上搭建基于GitHub Page的Hexo博客 环境配置Hexo官网(https://hexo.io/docs/)上本就有对Hexo安装及使用的详细介绍，墙裂推荐。这里来讲述自己安装的亲身步骤，或有区别。 Node.js用来生成静态页面。移步Node.js官网(https://nodejs.org/en/)，下载v5.5.0 Stable 一路安装即可。 Git用来将本地Hexo内">
+<meta name="keywords" content="Mac GitHub Page 搭建博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac上搭建基于GitHub Page的Hexo博客">
+<meta property="og:url" content="http://yoursite.com/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[参考1]Mac上搭建基于GitHub Page的Hexo博客 环境配置Hexo官网(https://hexo.io/docs/)上本就有对Hexo安装及使用的详细介绍，墙裂推荐。这里来讲述自己安装的亲身步骤，或有区别。 Node.js用来生成静态页面。移步Node.js官网(https://nodejs.org/en/)，下载v5.5.0 Stable 一路安装即可。 Git用来将本地Hexo内">
+<meta property="og:updated_time" content="2018-01-15T11:28:11.029Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Mac上搭建基于GitHub Page的Hexo博客">
+<meta name="twitter:description" content="[参考1]Mac上搭建基于GitHub Page的Hexo博客 环境配置Hexo官网(https://hexo.io/docs/)上本就有对Hexo安装及使用的详细介绍，墙裂推荐。这里来讲述自己安装的亲身步骤，或有区别。 Node.js用来生成静态页面。移步Node.js官网(https://nodejs.org/en/)，下载v5.5.0 Stable 一路安装即可。 Git用来将本地Hexo内">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,61 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-android-studio-gradle-简单命令行" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/15/android-studio-gradle-简单命令行/" class="article-date">
-  <time datetime="2018-01-15T11:16:54.000Z" itemprop="datePublished">2018-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/android-studio-gradle-简单命令行/">android studio gradle 简单命令行</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[参考1]<a href="http://stormzhang.com/devtools/2015/01/05/android-studio-tutorial5/" target="_blank" rel="noopener">ANDROID STUDIO系列教程五–GRADLE命令详解与导入第三方包</a></p>
-<p>./代表当前目录，gradlew代表 gradle wrapper，意思是gradle的一层包装，大家可以理解为在这个项目本地就封装了gradle，即gradle wrapper<br>下面以 9GAG 为例来讲解下命令行Gradle编译的过程。</p>
-<p>1、切换到9GAG项目的根目录，执行 ./gradlew -v 来查看下项目所用的Gradle版本<br>如果你是第一次执行会去下载Gradle，这个过程如果不翻墙非常慢，建议翻墙</p>
-<h2 id="紧接着下载成功会看到如下信息："><a href="#紧接着下载成功会看到如下信息：" class="headerlink" title="紧接着下载成功会看到如下信息："></a>紧接着下载成功会看到如下信息：</h2><h2 id="Gradle-2-2-1"><a href="#Gradle-2-2-1" class="headerlink" title="Gradle 2.2.1"></a>Gradle 2.2.1</h2><p>Build time:   2014-11-24 09:45:35 UTC<br>Build number: none<br>Revision:     6fcb59c06f43a4e6b1bcb401f7686a8601a1fb4a</p>
-<p>Groovy:       2.3.6<br>Ant:          Apache Ant(TM) version 1.9.3 compiled on December 23 2013<br>JVM:          1.7.0_60 (Oracle Corporation 24.60-b09)<br>OS:           Mac OS X 10.9.5 x86_64<br>2、接着执行 ./gradlew clean<br>执行这个命令会清除9GAG/app目录下的build文件夹并去下载Gradle的一些依赖，下载成功并编译通过时会看到如下信息：</p>
-<p>:app:clean UP-TO-DATE<br>:extras:ShimmerAndroid:clean UP-TO-DATE</p>
-<p>BUILD SUCCESSFUL<br>3、最后执行 ./gradlew build<br>这个命令会直接编译并命令把debug、release环境的包都打出来，如果看到如下字样就代表build成功了</p>
-<p>BUILD SUCCESSFUL</p>
-<p>Total time: 31.456 secs<br>紧接着在 9GAG/app/build/outputs/apk 目录下会看到类似于app-debug-unaligned.apk, app-release-unsigned.apk等，<br>看名字应该能理解意思，unaligned代表没有进行zip优化的，unsigned代表没有签名的。然后就可以直接安装apk查看运行效果了。</p>
-<p>在9GAG/gradle/wrapper/gralde-wrapper.properties文件中声明了它指向的目录和版本。只要下载成功即可用grdle wrapper的命令代替全局的gradle命令。</p>
-<h4 id="MAC-是当前路径"><a href="#MAC-是当前路径" class="headerlink" title="MAC  ./ 是当前路径"></a>MAC  ./ 是当前路径</h4><p>理解了gradle wrapper的概念，下面一些常用命令也就容易理解了。<br>./gradlew -v 版本号<br>./gradlew clean 清除9GAG/app目录下的build文件夹<br>./gradlew build 检查依赖并编译打包<br>这里注意的是 ./gradlew build 命令把debug、release环境的包都打出来，如果正式发布只需要打Release的包，该怎么办呢，<br>下面介绍一个很有用的命令 <strong>assemble</strong>, 另外 Gradle 还支持驼峰命名法的缩写如下面的 aD 或 aR</p>
-<p>./gradlew assembleDebug 或者 ./gradlew aD, 编译并打 Debug 包<br>./gradlew assembleRelease 或者 ./gradlew aR, 编译并打 Release 包</p>
-<p>除此之外，assemble还可以和productFlavors结合使用，具体在查看多渠道打包进一步理解。</p>
-<p>./gradlew installDebug  或者 ./gradlew iD ,Debug 模式打包并安装<br>./gradlew installRelease  或者 ./gradlew iR, Release 模式打包并安装</p>
-<p>./gradlew uninstallRelease 卸载Release模式包</p>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>把 Mac 上的操作的 ./ 去掉就可以了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/android-studio-gradle-简单命令行/" data-id="cjcg4molw00038uyg5v5gx6pf" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Mac上搭建基于GitHub Page的Hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Mac上搭建基于GitHub Page的Hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/" class="article-date">
   <time datetime="2018-01-15T10:48:07.000Z" itemprop="datePublished">2018-01-15</time>
@@ -126,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/">Mac上搭建基于GitHub Page的Hexo博客</a>
+    <h1 class="article-title" itemprop="name">
+      Mac上搭建基于GitHub Page的Hexo博客
     </h1>
   
 
@@ -182,131 +133,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-UX_UE_UI概念" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/15/UX_UE_UI概念/" class="article-date">
-  <time datetime="2018-01-15T10:48:07.000Z" itemprop="datePublished">2018-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2018/01/15/android-studio-gradle-简单命令行/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
         
+          android studio gradle 简单命令行
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/UX_UE_UI概念/">UX_UE_UI概念</a>
-    </h1>
   
+    <a href="/2018/01/15/UX_UE_UI概念/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">UX_UE_UI概念</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>UX: 用户体验（User Experience）<br>UE: 用户体验设计（Users Experience Design）<br>UI: 用户界面（user interface）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/UX_UE_UI概念/" data-id="cjcg4molt00018uygewdpvgye" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/概念/">概念</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-postOne" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/15/postOne/" class="article-date">
-  <time datetime="2018-01-15T10:48:07.000Z" itemprop="datePublished">2018-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/postOne/">postOne</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/postOne/" data-id="cjcg4moly00048uyg8gtmttj6" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/15/hello-world/" class="article-date">
-  <time datetime="2018-01-15T08:58:44.743Z" itemprop="datePublished">2018-01-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/hello-world/" data-id="cjcg4molz00058uygervj1byl" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
