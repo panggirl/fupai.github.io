@@ -61,6 +61,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-android-studio-gradle-简单命令行" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/android-studio-gradle-简单命令行/" class="article-date">
+  <time datetime="2018-01-15T11:16:54.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/android-studio-gradle-简单命令行/">android studio gradle 简单命令行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="android-studio-gradle-简单命令"><a href="#android-studio-gradle-简单命令" class="headerlink" title="android studio gradle 简单命令"></a>android studio gradle 简单命令</h1><p>[参考1]<a href="http://stormzhang.com/devtools/2015/01/05/android-studio-tutorial5/" target="_blank" rel="noopener">ANDROID STUDIO系列教程五–GRADLE命令详解与导入第三方包</a></p>
+<p>./代表当前目录，gradlew代表 gradle wrapper，意思是gradle的一层包装，大家可以理解为在这个项目本地就封装了gradle，即gradle wrapper<br>下面以 9GAG 为例来讲解下命令行Gradle编译的过程。</p>
+<p>1、切换到9GAG项目的根目录，执行 ./gradlew -v 来查看下项目所用的Gradle版本<br>如果你是第一次执行会去下载Gradle，这个过程如果不翻墙非常慢，建议翻墙</p>
+<h2 id="紧接着下载成功会看到如下信息："><a href="#紧接着下载成功会看到如下信息：" class="headerlink" title="紧接着下载成功会看到如下信息："></a>紧接着下载成功会看到如下信息：</h2><h2 id="Gradle-2-2-1"><a href="#Gradle-2-2-1" class="headerlink" title="Gradle 2.2.1"></a>Gradle 2.2.1</h2><p>Build time:   2014-11-24 09:45:35 UTC<br>Build number: none<br>Revision:     6fcb59c06f43a4e6b1bcb401f7686a8601a1fb4a</p>
+<p>Groovy:       2.3.6<br>Ant:          Apache Ant(TM) version 1.9.3 compiled on December 23 2013<br>JVM:          1.7.0_60 (Oracle Corporation 24.60-b09)<br>OS:           Mac OS X 10.9.5 x86_64<br>2、接着执行 ./gradlew clean<br>执行这个命令会清除9GAG/app目录下的build文件夹并去下载Gradle的一些依赖，下载成功并编译通过时会看到如下信息：</p>
+<p>:app:clean UP-TO-DATE<br>:extras:ShimmerAndroid:clean UP-TO-DATE</p>
+<p>BUILD SUCCESSFUL<br>3、最后执行 ./gradlew build<br>这个命令会直接编译并命令把debug、release环境的包都打出来，如果看到如下字样就代表build成功了</p>
+<p>BUILD SUCCESSFUL</p>
+<p>Total time: 31.456 secs<br>紧接着在 9GAG/app/build/outputs/apk 目录下会看到类似于app-debug-unaligned.apk, app-release-unsigned.apk等，<br>看名字应该能理解意思，unaligned代表没有进行zip优化的，unsigned代表没有签名的。然后就可以直接安装apk查看运行效果了。</p>
+<p>在9GAG/gradle/wrapper/gralde-wrapper.properties文件中声明了它指向的目录和版本。只要下载成功即可用grdle wrapper的命令代替全局的gradle命令。</p>
+<h4 id="MAC-是当前路径"><a href="#MAC-是当前路径" class="headerlink" title="MAC  ./ 是当前路径"></a>MAC  ./ 是当前路径</h4><p>理解了gradle wrapper的概念，下面一些常用命令也就容易理解了。<br>./gradlew -v 版本号<br>./gradlew clean 清除9GAG/app目录下的build文件夹<br>./gradlew build 检查依赖并编译打包<br>这里注意的是 ./gradlew build 命令把debug、release环境的包都打出来，如果正式发布只需要打Release的包，该怎么办呢，<br>下面介绍一个很有用的命令 <strong>assemble</strong>, 另外 Gradle 还支持驼峰命名法的缩写如下面的 aD 或 aR</p>
+<p>./gradlew assembleDebug 或者 ./gradlew aD, 编译并打 Debug 包<br>./gradlew assembleRelease 或者 ./gradlew aR, 编译并打 Release 包</p>
+<p>除此之外，assemble还可以和productFlavors结合使用，具体在查看多渠道打包进一步理解。</p>
+<p>./gradlew installDebug  或者 ./gradlew iD ,Debug 模式打包并安装<br>./gradlew installRelease  或者 ./gradlew iR, Release 模式打包并安装</p>
+<p>./gradlew uninstallRelease 卸载Release模式包</p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>把 Mac 上的操作的 ./ 去掉就可以了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/android-studio-gradle-简单命令行/" data-id="cjcg48320000187ygvx7v1id4" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-UX_UE_UI概念" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/15/UX_UE_UI概念/" class="article-date">
@@ -88,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/UX_UE_UI概念/" data-id="cjcg44jcf00007myguwz6qpgm" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/15/UX_UE_UI概念/" data-id="cjcg4831w000087yg69c2rciu" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/概念/">概念</a></li></ul>
@@ -142,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/gradle命令/" data-id="cjcg44jco00037myghobp5ath" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/15/gradle命令/" data-id="cjcg48324000387ygv2j7rjzy" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gralde-命令行/">gralde 命令行</a></li></ul>
@@ -180,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/postOne/" data-id="cjcg44jcp00047mygzcds8iw9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/15/postOne/" data-id="cjcg48327000587ygk78sbm2h" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -225,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/hello-world/" data-id="cjcg44jck00017mygzaqgaiwp" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/15/hello-world/" data-id="cjcg48325000487yg9kq0h93u" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -278,6 +330,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/01/15/android-studio-gradle-简单命令行/">android studio gradle 简单命令行</a>
+          </li>
         
           <li>
             <a href="/2018/01/15/UX_UE_UI概念/">UX_UE_UI概念</a>
