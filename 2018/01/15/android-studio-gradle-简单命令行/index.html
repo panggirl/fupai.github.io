@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/15/android-studio-gradle-简单命令行/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="[参考1]ANDROID STUDIO系列教程五–GRADLE命令详解与导入第三方包 ./代表当前目录，gradlew代表 gradle wrapper，意思是gradle的一层包装，大家可以理解为在这个项目本地就封装了gradle，即gradle wrapper下面以 9GAG 为例来讲解下命令行Gradle编译的过程。 1、切换到9GAG项目的根目录，执行 ./gradlew -v 来查看下项">
-<meta property="og:updated_time" content="2018-01-16T02:56:31.205Z">
+<meta property="og:updated_time" content="2018-01-18T08:53:53.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android studio gradle 简单命令行">
 <meta name="twitter:description" content="[参考1]ANDROID STUDIO系列教程五–GRADLE命令详解与导入第三方包 ./代表当前目录，gradlew代表 gradle wrapper，意思是gradle的一层包装，大家可以理解为在这个项目本地就封装了gradle，即gradle wrapper下面以 9GAG 为例来讲解下命令行Gradle编译的过程。 1、切换到9GAG项目的根目录，执行 ./gradlew -v 来查看下项">
@@ -101,11 +101,13 @@
 <p>./gradlew installDebug  或者 ./gradlew iD ,Debug 模式打包并安装<br>./gradlew installRelease  或者 ./gradlew iR, Release 模式打包并安装</p>
 <p>./gradlew uninstallRelease 卸载Release模式包</p>
 <h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>把 Mac 上的操作的 ./ 去掉就可以了</p>
-<h3 id="注：对于有多个设备连接时打包并会安装到每个已连接的设备上。"><a href="#注：对于有多个设备连接时打包并会安装到每个已连接的设备上。" class="headerlink" title="注：对于有多个设备连接时打包并会安装到每个已连接的设备上。"></a>注：对于有多个设备连接时打包并会安装到每个已连接的设备上。</h3>
+<h3 id="注：对于有多个设备连接时打包并会安装到每个已连接的设备上。"><a href="#注：对于有多个设备连接时打包并会安装到每个已连接的设备上。" class="headerlink" title="注：对于有多个设备连接时打包并会安装到每个已连接的设备上。"></a>注：对于有多个设备连接时打包并会安装到每个已连接的设备上。</h3><h3 id="mac-android-studio-执行terminal命令出现Permission-denied的问题"><a href="#mac-android-studio-执行terminal命令出现Permission-denied的问题" class="headerlink" title="mac android studio 执行terminal命令出现Permission denied的问题"></a>mac android studio 执行terminal命令出现Permission denied的问题</h3><p>如果执行上面的命令出现了bash: ./gradlew: Permission denied的问题，说明权限有问题，这时候直接执行命令<br>chmod +x gradlew</p>
+<p>如果上面的问题解决了，但是执行打包的命令还是出现了问题，且问题是这个java.lang.UnsupportedClassVersionError: com/android/build/gradle/AppPlugin : Unsupported major.minor的话，说明jdk版本有问题，应该要升级jdk8。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/15/android-studio-gradle-简单命令行/" data-id="cjcg473wm00082zyg7a8qutw9" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/01/15/android-studio-gradle-简单命令行/" data-id="cjck9f537000197qlahx9tq9c" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -115,9 +117,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/01/15/postOne/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">postOne</div>
+      <div class="article-nav-title">Mac上搭建基于GitHub Page的Hexo博客</div>
     </a>
   
 </nav>
@@ -172,7 +174,7 @@
           </li>
         
           <li>
-            <a href="/2018/01/15/postOne/">postOne</a>
+            <a href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/">Mac上搭建基于GitHub Page的Hexo博客</a>
           </li>
         
           <li>
@@ -180,7 +182,7 @@
           </li>
         
           <li>
-            <a href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/">Mac上搭建基于GitHub Page的Hexo博客</a>
+            <a href="/2018/01/15/postOne/">postOne</a>
           </li>
         
           <li>
