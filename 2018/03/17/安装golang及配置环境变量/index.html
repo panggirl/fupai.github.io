@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="GOGolang 在 Mac OS 上的环境配置网上有很多安装方法，比如通过 homebrew 来安装。 直接下载的安装包  安装包下载地址地址： https://golang.org/dl/   Homerbrew 安装参考:http://brew.sh/.使用命令行直接安装Golang:1brew install go 12345678910==&amp;gt; Downloading https:/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/安装golang及配置环境变量/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="GOGolang 在 Mac OS 上的环境配置网上有很多安装方法，比如通过 homebrew 来安装。 直接下载的安装包  安装包下载地址地址： https://golang.org/dl/   Homerbrew 安装参考:http://brew.sh/.使用命令行直接安装Golang:1brew install go 12345678910==&amp;gt; Downloading https:/">
+<meta property="og:image" content="http://img.blog.csdn.net/20170504200110277?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWNocmlzMDA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-03-19T09:38:02.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="GOGolang 在 Mac OS 上的环境配置网上有很多安装方法，比如通过 homebrew 来安装。 直接下载的安装包  安装包下载地址地址： https://golang.org/dl/   Homerbrew 安装参考:http://brew.sh/.使用命令行直接安装Golang:1brew install go 12345678910==&amp;gt; Downloading https:/">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170504200110277?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWNocmlzMDA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-安装golang及配置环境变量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/17/安装golang及配置环境变量/" class="article-date">
+  <time datetime="2018-03-17T08:23:09.164Z" itemprop="datePublished">2018-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="GO"><a href="#GO" class="headerlink" title="GO"></a>GO</h1><h5 id="Golang-在-Mac-OS-上的环境配置"><a href="#Golang-在-Mac-OS-上的环境配置" class="headerlink" title="Golang 在 Mac OS 上的环境配置"></a>Golang 在 Mac OS 上的环境配置</h5><p>网上有很多安装方法，比如通过 homebrew 来安装。</p>
+<p><code>直接下载的安装包</code></p>
+<blockquote>
+<p>安装包下载地址<br>地址： <a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a></p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170504200110277?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWNocmlzMDA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="header"></p>
+<p><code>Homerbrew</code> 安装参考:<a href="http://brew.sh/" target="_blank" rel="noopener">http://brew.sh/</a>.<br>使用命令行直接安装Golang:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install go</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">==&gt; Downloading https://homebrew.bintray.com/bottles/go-1.7.el_capitan.bottle.tar.gz</span><br><span class="line">######################################################################## 100.0%</span><br><span class="line">==&gt; Pouring go-1.7.el_capitan.bottle.tar.gz</span><br><span class="line">==&gt; Caveats</span><br><span class="line">As of go 1.2, a valid GOPATH is required to use the `go get` command:</span><br><span class="line">  https://golang.org/doc/code.html#GOPATH</span><br><span class="line">You may wish to add the GOROOT-based install location to your PATH:</span><br><span class="line">  export PATH=$PATH:/usr/local/opt/go/libexec/bin</span><br><span class="line">==&gt; Summary</span><br><span class="line">🍺  /usr/local/Cellar/go/1.7: 6,435 files, 250.6M</span><br></pre></td></tr></table></figure>
+<p>验证安装成功<br>在命令行输入 <code>go version</code>，获取到go的version，则代表安装成功。我的验证结果如下：</p>
+<blockquote>
+<p>go version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go1.8.1 darwin/amd64</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><p>查看go 的环境变量设置的命令</p>
+<blockquote>
+<p>go env</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GOARCH=&quot;amd64&quot;</span><br><span class="line">    GOBIN=&quot;&quot;</span><br><span class="line">    GOEXE=&quot;&quot;</span><br><span class="line">    GOHOSTARCH=&quot;amd64&quot;</span><br><span class="line">    GOHOSTOS=&quot;darwin&quot;</span><br><span class="line">    GOOS=&quot;darwin&quot;</span><br><span class="line">    GOPATH=&quot;&quot;</span><br><span class="line">    GORACE=&quot;&quot;</span><br><span class="line">    GOROOT=&quot;/usr/local/Cellar/go/1.7.6/libexec&quot;</span><br><span class="line">    GOTOOLDIR=&quot;/usr/local/Cellar/go/1.7.6/libexec/pkg/tool/darwin_amd64&quot;</span><br><span class="line">    GO15VENDOREXPERIMENT=&quot;&quot;</span><br><span class="line">    CC=&quot;clang&quot;</span><br><span class="line">    GOGCCFLAGS=&quot;-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fno-common&quot;</span><br><span class="line">    CXX=&quot;clang++&quot;</span><br><span class="line">    CGO_ENABLED=&quot;1&quot;</span><br></pre></td></tr></table></figure>
+<p>一般来说，需要为go添加三个主要的环境变量，分别是<code>GOROOT</code>, <code>GOPATH</code>以及go命令的路径<code>GOBIN</code>，通过安装包点击安装的go的位置默认为/usr/local/go，因此需要将/usr/local/go/bin添加到PATH里，而GOROOT便是安装目录/usr/local/go，所以<code>GOROOT变量默认已经设置好</code>。GOPATH一般是自定义目录，日常开发的根目录，用于存放你将要源码位置，如$HOME/go等，修改环境变量可通过修改当前用户目录下的配置文件来修改，GOBIN:是GOPATH下的bin目录。</p>
+<p>简单说，需要设置的环境变量包括:<code>GOPATH</code> ,<code>GOBIN</code> 以及把GOBIN加入到PATH中,<code>GOROOT变量默认已经设置好</code>。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1、打开终端输入`cd ~`进入用户主目录;</span><br><span class="line">2、输入`ls -all`命令查看是否存在`.bash_profile`;</span><br><span class="line">3、存在既使用`vim .bash_profile` 打开文件;</span><br><span class="line">4、输入` i `进入vim编辑模式；</span><br><span class="line">5、配置GOPATH、GOBIN</span><br><span class="line"></span><br><span class="line">在fishshell设置GOPATH：</span><br><span class="line"></span><br><span class="line">命令行：set -gx GOPATH /usr/local/Cellar/go/1.7.6</span><br><span class="line"></span><br><span class="line">在bash中设置：</span><br><span class="line"></span><br><span class="line">命令行：vim .bash_profile</span><br><span class="line"></span><br><span class="line">    export GOPATH=/Users/用户名/go</span><br><span class="line">    export GOBIN=$GOPATH/bin</span><br><span class="line">    export PATH=$PATH:$GOBIN</span><br><span class="line"></span><br><span class="line">使修改立刻生效:</span><br><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure>
+<p>再看下go的环境变量:</p>
+<blockquote>
+<p>go env</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GOARCH=&quot;amd64&quot;</span><br><span class="line">GOBIN=&quot;/usr/local/Cellar/go/1.7.6/bin&quot;</span><br><span class="line">GOEXE=&quot;&quot;</span><br><span class="line">GOHOSTARCH=&quot;amd64&quot;</span><br><span class="line">GOHOSTOS=&quot;darwin&quot;</span><br><span class="line">GOOS=&quot;darwin&quot;</span><br><span class="line">GOPATH=&quot;/usr/local/Cellar/go/1.7.6&quot;</span><br><span class="line">GORACE=&quot;&quot;</span><br><span class="line">GOROOT=&quot;/usr/local/Cellar/go/1.7.6/libexec&quot;</span><br><span class="line">GOTOOLDIR=&quot;/usr/local/Cellar/go/1.7.6/libexec/pkg/tool/darwin_amd64&quot;</span><br><span class="line">GO15VENDOREXPERIMENT=&quot;&quot;</span><br><span class="line">CC=&quot;clang&quot;</span><br><span class="line">GOGCCFLAGS=&quot;-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fno-common&quot;</span><br><span class="line">CXX=&quot;clang++&quot;</span><br><span class="line">CGO_ENABLED=&quot;1&quot;</span><br></pre></td></tr></table></figure>
+<p>环境变量设置完成!</p>
+<h5 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h5><p>找到安装目录/usr/local/go，删除 go 目录及删除环境变量即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/17/安装golang及配置环境变量/" data-id="cjfc9g4u2000r656nrdcz1p3g" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/19/Mac 安装配置android-ndk/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/15/常用命令行/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/Mac 安装配置android-ndk/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Mac 下用 go 开发Android应用环境设置下载 gomoblie 工具123go get -u  golang.org/x/mobile/cmd/gomobilegomoblie init 如果出现下面错误：123456789$ gomobile initgomobile: xcrun --show-sdk-path: exit status 1xcrun: error: SDK &amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/03/19/MAC go 开发Android应用环境设置/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Mac 下用 go 开发Android应用环境设置下载 gomoblie 工具123go get -u  golang.org/x/mobile/cmd/gomobilegomoblie init 如果出现下面错误：123456789$ gomobile initgomobile: xcrun --show-sdk-path: exit status 1xcrun: error: SDK &amp;quo">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/120296/201601/120296-20160131215423739-1770285852.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/120296/201602/120296-20160201071258054-1113926351.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/120296/201602/120296-20160202073625038-2060948126.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/120296/201602/120296-20160202071434319-1692070591.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/120296/201602/120296-20160202071435085-224729413.png">
+<meta property="og:updated_time" content="2018-03-19T10:28:25.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Mac 下用 go 开发Android应用环境设置下载 gomoblie 工具123go get -u  golang.org/x/mobile/cmd/gomobilegomoblie init 如果出现下面错误：123456789$ gomobile initgomobile: xcrun --show-sdk-path: exit status 1xcrun: error: SDK &amp;quo">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/120296/201601/120296-20160131215423739-1770285852.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MAC go 开发Android应用环境设置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/19/MAC go 开发Android应用环境设置/" class="article-date">
+  <time datetime="2018-03-19T09:40:08.610Z" itemprop="datePublished">2018-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mac-下用-go-开发Android应用环境设置"><a href="#Mac-下用-go-开发Android应用环境设置" class="headerlink" title="Mac 下用 go 开发Android应用环境设置"></a>Mac 下用 go 开发Android应用环境设置</h1><h5 id="下载-gomoblie-工具"><a href="#下载-gomoblie-工具" class="headerlink" title="下载 gomoblie 工具"></a>下载 gomoblie 工具</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go get -u  golang.org/x/mobile/cmd/gomobile</span><br><span class="line"></span><br><span class="line">gomoblie init</span><br></pre></td></tr></table></figure>
+<p><img src="https://images2015.cnblogs.com/blog/120296/201601/120296-20160131215423739-1770285852.png" alt="header"><br>如果出现下面错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ gomobile init</span><br><span class="line"></span><br><span class="line">gomobile: xcrun --show-sdk-path: exit status 1</span><br><span class="line"></span><br><span class="line">xcrun: error: SDK &quot;iphoneos&quot; cannot be located</span><br><span class="line"></span><br><span class="line">xcrun: error: SDK &quot;iphoneos&quot; cannot be located</span><br><span class="line"></span><br><span class="line">xcrun: error: unable to lookup item &apos;Path&apos; in SDK &apos;iphoneos&apos;</span><br></pre></td></tr></table></figure></p>
+<p>则需要确保你安装了 XCode</p>
+<h5 id="安装-Android-SDK，并确保adb在PATH中"><a href="#安装-Android-SDK，并确保adb在PATH中" class="headerlink" title="安装 Android SDK，并确保adb在PATH中"></a>安装 Android SDK，并确保adb在PATH中</h5><p>`adb 真机调试``<br>adb devices 命令可以看到我们刚刚配好的真机。</p>
+<p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gomobile install golang.org/x/mobile/example/basic</span><br></pre></td></tr></table></figure></p>
+<p>我们会看见手机桌面上安装好了这个 basic 应用。<br>我们在手机上运行这个应用就可以看到效果。<br><img src="https://images2015.cnblogs.com/blog/120296/201602/120296-20160201071258054-1113926351.png" alt="header"></p>
+<h5 id="使用go-run-在桌面测试程序"><a href="#使用go-run-在桌面测试程序" class="headerlink" title="使用go run 在桌面测试程序"></a>使用go run 在桌面测试程序</h5><p>这个例子在 pc 桌面是可以跑的。只需如下运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd $GOPATH/src/golang.org/x/mobile/example/basic</span><br><span class="line">$ go run main.go</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://images2015.cnblogs.com/blog/120296/201602/120296-20160202073625038-2060948126.png" alt="header"></p>
+<p>go build 也可以生产该操作系统下的执行文件。</p>
+<h5 id="使用gomobile直接生成apk格式Android应用"><a href="#使用gomobile直接生成apk格式Android应用" class="headerlink" title="使用gomobile直接生成apk格式Android应用."></a>使用gomobile直接生成apk格式Android应用.</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd $GOPATH/src/golang.org/x/mobile/example/basic</span><br><span class="line">$ gomobile build</span><br><span class="line">$ ls</span><br><span class="line">main.go basic.apk</span><br></pre></td></tr></table></figure>
+<h5 id="其他例子"><a href="#其他例子" class="headerlink" title="其他例子"></a>其他例子</h5><p>go 提供的几个例子运行截图如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gomobile install golang.org/x/mobile/example/audio</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://images2015.cnblogs.com/blog/120296/201602/120296-20160202071434319-1692070591.png" alt="header"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gomobile install golang.org/x/mobile/example/flappy</span><br></pre></td></tr></table></figure>
+<p><img src="https://images2015.cnblogs.com/blog/120296/201602/120296-20160202071435085-224729413.png" alt="header"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/19/MAC go 开发Android应用环境设置/" data-id="cjfc9g4t10006656nqe8pfvmf" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/22/设计模式原则/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/19/Mac 安装配置android-ndk/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/Mac 安装配置android-ndk/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

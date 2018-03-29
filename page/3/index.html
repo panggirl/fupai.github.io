@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-MAC 音视频工具" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/MAC 音视频工具/" class="article-date">
+  <time datetime="2018-01-29T09:38:25.281Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="视频播放器、截取"><a href="#视频播放器、截取" class="headerlink" title="视频播放器、截取"></a>视频播放器、截取</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装命令</span><br><span class="line">brew cask install vlc</span><br></pre></td></tr></table></figure>
+<p>Mac下的自带的播放器QuickTime，功能实在是太弱了，支持的格式既少又难用，快进什么的貌似都没快捷键，只能手动点击进度条，试用了一段时间的<a href="https://mplayerosx.ch/" target="_blank" rel="noopener">Mplayer</a>，发现效果也不好，会有视频卡顿的现象，最终选择了 <a href="http://www.videolan.org/vlc/download-macosx.html" target="_blank" rel="noopener">VLC</a>，一直用的还不错。 此外， 有网友补充道 <a href="https://mpv.io/" target="_blank" rel="noopener">mpv</a> 才是程序员最佳播放器，大家也可以尝试下。</p>
+<blockquote>
+<p>要知道直接brew install mpv进行安装的话，默认是没有编译程序包的，只有分散的组件，就是终端可以直接启用组件，所以直接brew linkapps mpv输入后是没有动静的，我刚开始也是这样，一脸懵逼。<br>正确的安装命令是brew install mpv with-bundle，脚本文件里已经说明了就是编译过程中集成程序包（mpv.app），这样安装后直接到文件目录可以看到有个编译成型的程序，也可以直接brew linkapps mpv把快捷方式添加到应用程序里面，这才是正解。</p>
+</blockquote>
+<p>很多时候，我们只需要截取视频中的某一段视频，或者简单的进行格式转换，这时候就需要 ffmpeg 出马了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 安装命令</span><br><span class="line">brew  install ffmpeg</span><br><span class="line"></span><br><span class="line"># 将 mov 格式的视频转为 mp4，ffmpeg 能根据文件后缀名自动识别</span><br><span class="line">ffmpeg  -i foo.mov foo.mp4</span><br><span class="line"># 从第 6 秒开始，截取10s 视频，并且转为 mp4 格式</span><br><span class="line">ffmpeg -t 10 -ss 00:00:06 -i foo.mov smaller.mp4</span><br></pre></td></tr></table></figure></p>
+<p>音乐频播放器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装命令</span><br><span class="line">brew cask install vox</span><br></pre></td></tr></table></figure></p>
+<p>官方的 iTunes 实在是不适应，喜欢简洁清爽的朋友可以试试 <a href="https://vox.rocks/" target="_blank" rel="noopener">VOX</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/29/MAC 音视频工具/" data-id="cjfc9g4t30008656nzojrc82e" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MAC 图片处理工具" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/MAC 图片处理工具/" class="article-date">
+  <time datetime="2018-01-29T09:26:18.631Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MAC 图片处理工具</p>
+<h3 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install snip</span><br></pre></td></tr></table></figure>
+<p>Mac上的截图工具已经很好了，Cmd + Shift + 3/4就够用了，但是如果想在图片上写些文字，马赛克某部分，就不行了，推荐用 <a href="http://snip.qq.com/" target="_blank" rel="noopener">Snip</a>，才 2M 大小，虽说是腾讯开发的，但是不流氓。可以设置快捷键，我设定的是Cmd + Shift + 6。 更重要的一点是，Snip 可以解决Retina下截屏2x问题（就是截出来的图超大），就光这个特点就足以让你使用snip。</p>
+<p>我的snip配置<br><img src="http://img01.taobaocdn.com/imgextra/i1/581166664/TB2UXoxbFXXXXXnXXXXXXXXXXXX_!!581166664.png" alt="header"><br>Mac自带的 Preview 可以对图片进行旋转、调整大小、添加文字，不需要在额外安装软件。</p>
+<p><img src="http://img01.taobaocdn.com/imgextra/i1/581166664/TB2KtMobFXXXXXkXpXXXXXXXXXX_!!581166664.png" alt="header"></p>
+<h3 id="马赛克"><a href="#马赛克" class="headerlink" title="马赛克"></a>马赛克</h3><p><a href="https://www.yinxiang.com/skitch/" target="_blank" rel="noopener">圈点</a>洋名 Skitch，出自 Evernote，可以方便打马赛克，加标注。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install skitch</span><br></pre></td></tr></table></figure></p>
+<h3 id="图片合并"><a href="#图片合并" class="headerlink" title="图片合并"></a>图片合并</h3><p>Mac 版的 PS <a href="https://www.imagemagick.org/script/index.php" target="_blank" rel="noopener">ImageMagick</a>，<a href="https://apple.stackexchange.com/questions/52879/how-to-combine-two-images-into-one-on-a-mac/52882#52882" target="_blank" rel="noopener">常用命令</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew install ImageMagick</span><br><span class="line"></span><br><span class="line"># 下面两条命令都会把 left.png right.png 合并到 merged.png 里面</span><br><span class="line">convert +append left.png right.png merged.png</span><br><span class="line"></span><br><span class="line">montage -geometry 100% left.jpg right.jpg merged.jpg</span><br></pre></td></tr></table></figure></p>
+<h3 id="录屏-gif"><a href="#录屏-gif" class="headerlink" title="录屏 gif"></a>录屏 gif</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装命令</span><br><span class="line">brew cask install licecap</span><br></pre></td></tr></table></figure>
+<p>很多时候我们需要把自己的操作展示给别人看，比较好的做法是通过录屏软件将自己的操作保存成 gif 格式的图片。 开源免费的licecap 很好的解决了这个问题。<br>使用 licecap 制作的例子<br><img src="http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif" alt="header"></p>
+<h3 id="流程图制作工具"><a href="#流程图制作工具" class="headerlink" title="流程图制作工具"></a>流程图制作工具</h3><p>对于程序员来说，流程图应该是再亲切不过的了，一张图胜过千言万语。之前我都是用 Keynote 来画，但是实在是不好用，后来在知乎上发现了在线版的ProcessOn，大大减少了我画流程图的时间，上手也比较快。现在 ProcessOn 有了限制，只能保留 9 张流程图。我又找到了新的工具，<a href="https://www.draw.io/" target="_blank" rel="noopener">draw.io</a>，时序图、状态图统统不在话下。</p>
+<p>其次，国外很多项目的图是用纯文本画的，比较好用的在线工具是：<a href="http://www.sketchs.cn/article/detail/262.html" target="_blank" rel="noopener">asciiflow</a>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/29/MAC 图片处理工具/" data-id="cjfc9g4t20007656ns4s3479c" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-终端 iTerm 2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/终端 iTerm 2/" class="article-date">
+  <time datetime="2018-01-29T08:26:58.952Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="转载-终端-iTerm-2"><a href="#转载-终端-iTerm-2" class="headerlink" title="转载-终端 iTerm 2"></a><a href="http://liujiacai.gitee.io/wiki/mac/iterm2.html" target="_blank" rel="noopener">转载-终端 iTerm 2</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装命令</span><br><span class="line">brew cask install iterm2</span><br></pre></td></tr></table></figure>
+<p>Mac自带的终端不是很强，程序员们需要一个强劲的终端来工作，于是有了 iTerm2。需要设置一项：Left Option act as +Esc（Preferences–&gt;Profiles–&gt;Keys），这样 Option 就可以用作 Meta 键了。</p>
+<p>| 快捷键 |    功能 |<br>F11    查看桌面<br>F12    查看Dashboard<br>Cmd + &lt;-    HOME<br>Cmd + -&gt;    END<br>Shift + Control + 电源键    锁屏 （Windows 下为Win+L）<br>Cmd + Option + esc    强制关闭程序 （Windows 下为Ctrl+Alt+Delete）<br>Cmd + ~    在同一应用不同窗口切换<br>Cmd + Option + V    Finder 里面剪切<br>Cmd + D    垂直分屏<br>Cmd + Shift + D    水平分屏<br>Cmd + T    开多个Tabß<br>Cmd + 数字    在多个Tab之间进行切换<br>Ctrl + r    搜索历史命令<br>!!    执行上条命令<br>Option + F/B    向前、向后按字移动。Bash Shell 光标默认按照 Emacs 风格移动，也可改为 VIM，可参考Modifying the Bash Shell with the set Command。<br>Ctrl+x Ctrl+e    调用默认编辑器去编辑一个特别长的命令<br>当然，说到了 iTerm2，不得不提到终端复用软件 <a href="https://github.com/tmux/tmux/wiki" target="_blank" rel="noopener">tmux</a>，tmux 默认配置文件在 Mac 上很别扭，你可以参考我这里的<a href="https://github.com/jiacai2050/dotfiles/blob/master/.tmux.conf" target="_blank" rel="noopener">配置文件</a>，这样 tmux 就可以像 vim 一样实现各种分屏的效果了。如果你还不知道 tmux() 为何物，强烈推荐你看这个13分钟的<a href="https://pan.baidu.com/s/1gdLZzB9" target="_blank" rel="noopener">视频</a>，绝对物超所值，感谢 happypeter 的分享。</p>
+<p>我现在用的主题是：<a href="https://github.com/chriskempson/tomorrow-theme/blob/master/iTerm2/Tomorrow%20Night.itermcolors" target="_blank" rel="noopener">Tomorrow Night</a>。</p>
+<h3 id="bashrc"><a href="#bashrc" class="headerlink" title="~/.bashrc"></a>~/.bashrc</h3><p>Linux 一般通过~/.bashrc进行环境变量的配置，但是在 Mac 下配置后，发现根本没有效果，这是为什么呢？ 其实这是个比较基础的问题，shell有两种：登录式shell与非登录式shell，直观理解，登录(login)式shell就是在你打开shell要求你输入用户名与密码的shell，我们在使用桌面Linux时一般只在登录时接触到这种shell，等我们进入系统后，再打开的Terminal就是非登录式shell了。这两种 shell 读取配置的文件是不同的：</p>
+<p>登录式Shell启动时会去读取~/.profile文件（Redhat、Mac上为 ~/.bash_profile）<br>非登录式Shell会去读取~/.bashrc文件<br>这也就解释了为什么在 Linux 系统上只需要修改 ~/.bashrc 后即可生效的原因。但在 Mac 上有些不同，开机后再通过 Terminal.app（或iTerm.app） 打开终端时，这时的 shell 是登录式shell，因为Terminal.app（或iTerm.app）这个应用程序是通过/usr/bin/login这个命令打开终端的，所以不会去source ~/.bashrc了。 解决方法也很简单，在~/.bash_profile加上下面一句代码就ok了</p>
+<p>[ -r ~/.bashrc ] &amp;&amp; source ~/.bashrc<br>Mac下ls命令默认是没有颜色的，不是很直观，可以自己设置一个alias，参考<a href="https://apple.stackexchange.com/questions/33677/how-can-i-configure-mac-terminal-to-have-color-ls-output" target="_blank" rel="noopener">链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx</span><br><span class="line">alias ls=&apos;ls -FG&apos;</span><br><span class="line">alias ll=&apos;ls -l&apos;</span><br></pre></td></tr></table></figure></p>
+<p>为了在命令行提示符中显示时间，可以设置PS1变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export PS1=&quot;\n\e[1;37m[\e[m\e[1;35m\u\e[m\e[1;36m@\e[m\e[1;37m\h\e[m \e[1;33m\t\e[m \w\e[m\e[1;37m]\e[m\e[1;36m\e[m\n\$ &quot;</span><br><span class="line"></span><br><span class="line"># 效果如下</span><br><span class="line">[liujiacai@macbook 22:02:13 ~]</span><br></pre></td></tr></table></figure></p>
+<p>一些实用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 修改hostname</span><br><span class="line">sudo scutil --set HostName &lt;name&gt;</span><br><span class="line"># 查看USB设备</span><br><span class="line">system_profiler SPUSBDataType</span><br></pre></td></tr></table></figure></p>
+<p>下面的命令需要通过brew进行安装后在使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 查看网络请求</span><br><span class="line">brew install httpstat</span><br><span class="line">$ httpstat baidu.com</span><br><span class="line">Connected to 180.149.132.47:80 from 172.17.10.80:54727</span><br><span class="line"></span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Sat, 14 Jan 2017 13:49:16 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</span><br><span class="line">ETag: &quot;51-47cf7e6ee8400&quot;</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: 81</span><br><span class="line">Cache-Control: max-age=86400</span><br><span class="line">Expires: Sun, 15 Jan 2017 13:49:16 GMT</span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">Body stored in: /var/folders/2g/fxz_98ks0lgc79sjp5vn5cxc0000gn/T/tmpsawHq4</span><br><span class="line"></span><br><span class="line">  DNS Lookup   TCP Connection   Server Processing   Content Transfer</span><br><span class="line">[    69ms    |      37ms      |       33ms        |        0ms       ]</span><br><span class="line">             |                |                   |                  |</span><br><span class="line">    namelookup:69ms           |                   |                  |</span><br><span class="line">                        connect:106ms             |                  |</span><br><span class="line">                                      starttransfer:139ms            |</span><br><span class="line">                                                                 total:139ms</span><br><span class="line"></span><br><span class="line"># Swiss Army Knife for macOS !</span><br><span class="line">brew install m-cli</span><br><span class="line">$ m trash status</span><br><span class="line">Size:  51G</span><br><span class="line">Number of files: 252172</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/29/终端 iTerm 2/" data-id="cjfc9g4u8000x656n8bxx51qp" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Charles 在线破解工具" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/26/Charles 在线破解工具/" class="article-date">
+  <time datetime="2018-01-26T07:24:12.525Z" itemprop="datePublished">2018-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="转载-Charles-在线破解工具"><a href="#转载-Charles-在线破解工具" class="headerlink" title="[转载]Charles 在线破解工具"></a>[转载]Charles 在线破解工具</h3><h1 id="请支持正版，仅供技术交流。"><a href="#请支持正版，仅供技术交流。" class="headerlink" title="请支持正版，仅供技术交流。"></a>请支持正版，仅供技术交流。</h1><p>[参考]<a href="https://www.jianshu.com/p/46d29e60dd1b" target="_blank" rel="noopener">Charles 4.2.1 破解</a></p>
+<p>提供<br><a href="https://www.zzzmode.com/mytools/charles/" target="_blank" rel="noopener">Charles 在线破解工具</a></p>
+<p>描述<br>此工具用于生成破解后的charles.jar文件，blog介绍: <a href="https://blog.zzzmode.com/2017/05/16/charles-4.0.2" target="_blank" rel="noopener">https://blog.zzzmode.com/2017/05/16/charles-4.0.2</a><br>用法<br>输入RegisterName(此名称随意，用于显示 Registered to xxx)，选择已安装的版本，点击生成，并下载charles.jar文件<br>替换本地charles.jar文件<br>macOS: /Applications/Charles.app/Contents/Java/charles.jar<br>Windows: C:\Program Files\Charles\lib\charles.jar</p>
+<p>4.2.1 版本如果一直报文件损坏， 先启动一次应用，然后替换jar</p>
+<p>注意<br>仅用于学习交流，请勿用于任何商业用途</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/26/Charles 在线破解工具/" data-id="cjfc9g4sz0004656nct3h4v9p" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Atom 快捷键整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/25/Atom 快捷键整理/" class="article-date">
+  <time datetime="2018-01-25T09:30:36.926Z" itemprop="datePublished">2018-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Atom-快编辑器快捷键列表汇总整理"><a href="#Atom-快编辑器快捷键列表汇总整理" class="headerlink" title="Atom 快编辑器快捷键列表汇总整理"></a>Atom 快编辑器快捷键列表汇总整理</h2><p>[参考]<a href="https://www.iplaysoft.com/item/atom-shortcuts" target="_blank" rel="noopener">Atom 快编辑器快捷键列表汇总整理</a></p>
+<h5 id="使用Atom进行写作"><a href="#使用Atom进行写作" class="headerlink" title="使用Atom进行写作"></a>使用Atom进行写作</h5><p>ctrl-shift-M Markdown预览<br>可用代码片段 b, legal, img, l, i, code, t, table</p>
+<h4 id="文件切换"><a href="#文件切换" class="headerlink" title="文件切换"></a>文件切换</h4><p>ctrl-shift-s 保存所有打开的文件<br>cmd-shift-o 打开目录<br>cmd-\ 显示或隐藏目录树<br>ctrl-0 焦点移到目录树<br>目录树下，使用a，m，delete来增加，修改和删除<br>cmd-t或cmd-p 查找文件<br>cmd-b 在打开的文件之间切换<br>cmd-shift-b 只搜索从上次git commit后修改或者新增的文件</p>
+<h4 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h4><p>（等价于上下左右）<br>ctrl-p 前一行<br>ctrl-n 后一行<br>ctrl-f 前一个字符<br>ctrl-b 后一个字符</p>
+<p>alt-B, alt-left 移动到单词开始<br>alt-F, alt-right 移动到单词末尾</p>
+<p>cmd-right, ctrl-E 移动到一行结束<br>cmd-left, ctrl-A 移动到一行开始</p>
+<p>cmd-up 移动到文件开始<br>cmd-down 移动到文件结束</p>
+<p>ctrl-g 移动到指定行 row:column 处</p>
+<p>cmd-r 在方法之间跳转</p>
+<h4 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h4><p>cmd-F2 在本行增加书签<br>F2 跳到当前文件的下一条书签<br>shift-F2 跳到当前文件的上一条书签<br>ctrl-F2 列出当前工程所有书签</p>
+<h4 id="选取"><a href="#选取" class="headerlink" title="选取"></a>选取</h4><p>大部分和导航一致，只不过加上shift<br>ctrl-shift-P 选取至上一行<br>ctrl-shift-N 选取至下一样<br>ctrl-shift-B 选取至前一个字符<br>ctrl-shift-F 选取至后一个字符<br>alt-shift-B, alt-shift-left 选取至字符开始<br>alt-shift-F, alt-shift-right 选取至字符结束<br>ctrl-shift-E, cmd-shift-right 选取至本行结束<br>ctrl-shift-A, cmd-shift-left 选取至本行开始<br>cmd-shift-up 选取至文件开始<br>cmd-shift-down 选取至文件结尾<br>cmd-A 全选<br>cmd-L 选取一行，继续按回选取下一行<br>ctrl-shift-W 选取当前单词</p>
+<h5 id="编辑和删除文本"><a href="#编辑和删除文本" class="headerlink" title="编辑和删除文本"></a>编辑和删除文本</h5><p>基本操作<br>ctrl-T 使光标前后字符交换<br>cmd-J 将下一行与当前行合并<br>ctrl-cmd-up, ctrl-cmd-down 使当前行向上或者向下移动<br>cmd-shift-D 复制当前行到下一行<br>cmd-K, cmd-U 使当前字符大写<br>cmd-K, cmd-L 使当前字符小写</p>
+<p>删除和剪切<br>ctrl-shift-K 删除当前行<br>cmd-backspace 删除到当前行开始<br>cmd-fn-backspace 删除到当前行结束<br>ctrl-K 剪切到当前行结束<br>alt-backspace 或 alt-H 删除到当前单词开始<br>alt-delete 或 alt-D 删除到当前单词结束</p>
+<p>多光标和多处选取<br>cmd-click 增加新光标<br>cmd-shift-L 将多行选取改为多行光标<br>ctrl-shift-up, ctrl-shift-down 增加上（下）一行光标<br>cmd-D 选取文档中和当前单词相同的下一处<br>ctrl-cmd-G 选取文档中所有和当前光标单词相同的位置</p>
+<p>括号跳转<br>ctrl-m 相应括号之间，html tag之间等跳转<br>ctrl-cmd-m 括号(tag)之间文本选取<br>alt-cmd-. 关闭当前XML/HTML tag</p>
+<p>编码方式<br>ctrl-shift-U 调出切换编码选项</p>
+<p>查找和替换</p>
+<p>cmd-F 在buffer中查找<br>cmd-shift-f 在整个工程中查找</p>
+<p>代码片段</p>
+<p>alt-shift-S 查看当前可用代码片段<br>在~/.atom目录下snippets.cson文件中存放了你定制的snippets<br>定制说明</p>
+<p>自动补全</p>
+<p>ctrl-space 提示补全信息</p>
+<p>折叠</p>
+<p>alt-cmd-[ 折叠<br>alt-cmd-] 展开<br>alt-cmd-shift-{ 折叠全部<br>alt-cmd-shift-} 展开全部<br>cmd-k cmd-N 指定折叠层级 N为层级数</p>
+<p>文件语法高亮</p>
+<p>ctrl-shift-L 选择文本类型</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/25/Atom 快捷键整理/" data-id="cjfc9g4sy0002656nug4t0an0" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Kotlin 随笔" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/25/Kotlin 随笔/" class="article-date">
+  <time datetime="2018-01-25T09:19:14.681Z" itemprop="datePublished">2018-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h1><blockquote>
+<p>简洁的字符串</p>
+</blockquote>
+<p>Kotlin中的字符串基本Java中的类似，区别是加入了三个引号”””来方便长篇字符的编写，对字符串的加强，”””中可以包含换行、反斜杠等等特殊字符.<br>引入了字符串模版，方便字符串的拼接，可以用$符号拼接变量和表达式.</p>
+<pre><code>fun testString2() {
+    val strings = arrayListOf(&quot;abc&quot;, &quot;efd&quot;, &quot;gfg&quot;)
+    println(&quot;First content is $strings&quot;)
+    println(&quot;First content is ${strings[0]}&quot;)
+    println(&quot;First content is ${if (strings.size &gt; 0) strings[0] else &quot;null&quot;}&quot;)
+}
+</code></pre><p>值得注意的是，在Kotlin中，美元符号$是特殊字符，在字符串中不能直接显示，必须经过转义，方法1是用反斜杠，方法二是${‘$’}</p>
+<p><code>fun testString3() {
+        println(&quot;First content is \$strings&quot;)
+        println(&quot;First content is ${&#39;$&#39;}strings&quot;)
+    }</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/25/Kotlin 随笔/" data-id="cjfc9g4t00005656no30dc84e" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-RelativeLayout 属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/25/RelativeLayout 属性/" class="article-date">
+  <time datetime="2018-01-25T09:18:44.461Z" itemprop="datePublished">2018-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RelativeLayout的各种属性整理"><a href="#RelativeLayout的各种属性整理" class="headerlink" title="RelativeLayout的各种属性整理"></a>RelativeLayout的各种属性整理</h1><p>[参考]<a href="http://blog.csdn.net/u014518723/article/details/51154047" target="_blank" rel="noopener">RelativeLayout的各种属性整理</a></p>
+<h3 id="相对于兄弟元素-属性值必须为id的引用名“-id-id-name”"><a href="#相对于兄弟元素-属性值必须为id的引用名“-id-id-name”" class="headerlink" title="相对于兄弟元素-属性值必须为id的引用名“@id/id-name”"></a>相对于兄弟元素-属性值必须为id的引用名“@id/id-name”</h3><p>android:layout_below=”@id/aaa”：在指定View的下方<br>android:layout_above=”@id/xxx”：在指定View的上方<br>android:layout_toLeftOf=”@id/bbb”：在指定View的左边<br>android:layout_toRightOf=”@id/cccc”：在指定View的右边相对于兄弟元素<br>android:layout_below=”@id/aaa”：在指定View的下方<br>android:layout_above=”@id/xxx”：在指定View的上方<br>android:layout_toLeftOf=”@id/bbb”：在指定View的左边<br>android:layout_toRightOf=”@id/cccc”：在指定View的右边</p>
+<h3 id="相对于父元素"><a href="#相对于父元素" class="headerlink" title="相对于父元素"></a>相对于父元素</h3><p>android:layout_alignParentLeft=”true”：在父元素内左边<br>android:layout_alignParentRight=”true”：在父元素内右边<br>android:layout_alignParentTop=”true”：在父元素内顶部<br>android:layout_alignParentBottom=”true”：在父元素内底部</p>
+<h3 id="对齐方式-属性值必须为id的引用名“-id-id-name”"><a href="#对齐方式-属性值必须为id的引用名“-id-id-name”" class="headerlink" title="对齐方式-属性值必须为id的引用名“@id/id-name”"></a>对齐方式-属性值必须为id的引用名“@id/id-name”</h3><p>android:layout_centerInParent=”true”：居中布局<br>android:layout_centerVertical=”true”：水平居中布局<br>android:layout_centerHorizontal=”true”：垂直居中布局<br>android:layout_alignTop=”@id/xxx”：与指定View的上边界一致<br>android:layout_alignBottom=”@id/xxx”：与指定View下边界一致<br>android:layout_alignLeft=”@id/xxx”：与指定View的左边界一致<br>android:layout_alignRight=”@id/xxx”：与指定View的右边界一致</p>
+<h3 id="间隔"><a href="#间隔" class="headerlink" title="间隔"></a>间隔</h3><p>android:layout_marginBottom=””; 离某元素底边缘的距离<br>android:layout_marginLeft=””; 离某元素左边缘的距离<br>android:layout_marginRight =””;离某元素右边缘的距离<br>android:layout_marginTop=””; 离某元素上边缘的距离<br>android:layout_paddingBottom=””; 离父元素底边缘的距离<br>android:layout_paddingLeft=””; 离父元素左边缘的距离<br>android:layout_paddingRight =””;离父元素右边缘的距离<br>android:layout_paddingTop=””; 离父元素上边缘的距离</p>
+<h3 id="margin-与padding-区别"><a href="#margin-与padding-区别" class="headerlink" title="margin 与padding 区别"></a>margin 与padding 区别</h3><p>padding是站在父view的角度，是自己的内容与其父控件的边之间的距离。margin则是站在自己的角度描述问题，自己与旁边的某个组件的距离，如果同一级只有一个view，那么它的效果基本上就和padding一样了</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/25/RelativeLayout 属性/" data-id="cjfc9g4t4000a656n87c10aa5" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-android-studio-gradle-简单命令行" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/android-studio-gradle-简单命令行/" class="article-date">
+  <time datetime="2018-01-15T11:16:54.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/android-studio-gradle-简单命令行/">android studio gradle 简单命令行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[参考1]<a href="http://stormzhang.com/devtools/2015/01/05/android-studio-tutorial5/" target="_blank" rel="noopener">ANDROID STUDIO系列教程五–GRADLE命令详解与导入第三方包</a></p>
+<p>./代表当前目录，gradlew代表 gradle wrapper，意思是gradle的一层包装，大家可以理解为在这个项目本地就封装了gradle，即gradle wrapper<br>下面以 9GAG 为例来讲解下命令行Gradle编译的过程。</p>
+<p>1、切换到9GAG项目的根目录，执行 ./gradlew -v 来查看下项目所用的Gradle版本<br>如果你是第一次执行会去下载Gradle，这个过程如果不翻墙非常慢，建议翻墙</p>
+<h2 id="紧接着下载成功会看到如下信息："><a href="#紧接着下载成功会看到如下信息：" class="headerlink" title="紧接着下载成功会看到如下信息："></a>紧接着下载成功会看到如下信息：</h2><h2 id="Gradle-2-2-1"><a href="#Gradle-2-2-1" class="headerlink" title="Gradle 2.2.1"></a>Gradle 2.2.1</h2><p>Build time:   2014-11-24 09:45:35 UTC<br>Build number: none<br>Revision:     6fcb59c06f43a4e6b1bcb401f7686a8601a1fb4a</p>
+<p>Groovy:       2.3.6<br>Ant:          Apache Ant(TM) version 1.9.3 compiled on December 23 2013<br>JVM:          1.7.0_60 (Oracle Corporation 24.60-b09)<br>OS:           Mac OS X 10.9.5 x86_64<br>2、接着执行 ./gradlew clean<br>执行这个命令会清除9GAG/app目录下的build文件夹并去下载Gradle的一些依赖，下载成功并编译通过时会看到如下信息：</p>
+<p>:app:clean UP-TO-DATE<br>:extras:ShimmerAndroid:clean UP-TO-DATE</p>
+<p>BUILD SUCCESSFUL<br>3、最后执行 ./gradlew build<br>这个命令会直接编译并命令把debug、release环境的包都打出来，如果看到如下字样就代表build成功了</p>
+<p>BUILD SUCCESSFUL</p>
+<p>Total time: 31.456 secs<br>紧接着在 9GAG/app/build/outputs/apk 目录下会看到类似于app-debug-unaligned.apk, app-release-unsigned.apk等，<br>看名字应该能理解意思，unaligned代表没有进行zip优化的，unsigned代表没有签名的。然后就可以直接安装apk查看运行效果了。</p>
+<p>在9GAG/gradle/wrapper/gralde-wrapper.properties文件中声明了它指向的目录和版本。只要下载成功即可用grdle wrapper的命令代替全局的gradle命令。</p>
+<h4 id="MAC-是当前路径"><a href="#MAC-是当前路径" class="headerlink" title="MAC  ./ 是当前路径"></a>MAC  ./ 是当前路径</h4><p>理解了gradle wrapper的概念，下面一些常用命令也就容易理解了。<br>./gradlew -v 版本号<br>./gradlew clean 清除9GAG/app目录下的build文件夹<br>./gradlew build 检查依赖并编译打包<br>这里注意的是 ./gradlew build 命令把debug、release环境的包都打出来，如果正式发布只需要打Release的包，该怎么办呢，<br>下面介绍一个很有用的命令 <strong>assemble</strong>, 另外 Gradle 还支持驼峰命名法的缩写如下面的 aD 或 aR</p>
+<p>./gradlew assembleDebug 或者 ./gradlew aD, 编译并打 Debug 包<br>./gradlew assembleRelease 或者 ./gradlew aR, 编译并打 Release 包</p>
+<p>除此之外，assemble还可以和productFlavors结合使用，具体在查看多渠道打包进一步理解。</p>
+<p>./gradlew installDebug  或者 ./gradlew iD ,Debug 模式打包并安装<br>./gradlew installRelease  或者 ./gradlew iR, Release 模式打包并安装</p>
+<p>./gradlew uninstallRelease 卸载Release模式包</p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>把 Mac 上的操作的 ./ 去掉就可以了</p>
+<h3 id="注：对于有多个设备连接时打包并会安装到每个已连接的设备上。"><a href="#注：对于有多个设备连接时打包并会安装到每个已连接的设备上。" class="headerlink" title="注：对于有多个设备连接时打包并会安装到每个已连接的设备上。"></a>注：对于有多个设备连接时打包并会安装到每个已连接的设备上。</h3><h3 id="mac-android-studio-执行terminal命令出现Permission-denied的问题"><a href="#mac-android-studio-执行terminal命令出现Permission-denied的问题" class="headerlink" title="mac android studio 执行terminal命令出现Permission denied的问题"></a>mac android studio 执行terminal命令出现Permission denied的问题</h3><p>如果执行上面的命令出现了bash: ./gradlew: Permission denied的问题，说明权限有问题，这时候直接执行命令<br>chmod +x gradlew</p>
+<p>如果上面的问题解决了，但是执行打包的命令还是出现了问题，且问题是这个java.lang.UnsupportedClassVersionError: com/android/build/gradle/AppPlugin : Unsupported major.minor的话，说明jdk版本有问题，应该要升级jdk8。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/android-studio-gradle-简单命令行/" data-id="cjfc9g4tt000j656nxutl6ko1" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-postOne" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/postOne/" class="article-date">
+  <time datetime="2018-01-15T10:48:07.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/postOne/">postOne</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/postOne/" data-id="cjfc9g4tz000n656nai73y9b6" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Mac上搭建基于GitHub Page的Hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/" class="article-date">
+  <time datetime="2018-01-15T10:48:07.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/">Mac上搭建基于GitHub Page的Hexo博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[参考1]<a href="http://jeasonstudio.github.io/2016/05/26/Mac%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGitHub-Page%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">Mac上搭建基于GitHub Page的Hexo博客</a></p>
+<p>环境配置<br><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官网</a>上本就有对Hexo安装及使用的详细介绍，墙裂推荐。这里来讲述自己安装的亲身步骤，或有区别。</p>
+<p>Node.js<br>用来生成静态页面。移步<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网</a>，下载v5.5.0 Stable 一路安装即可。</p>
+<p>Git<br>用来将本地Hexo内容提交到Github上。Xcode自带Git，这里不再赘述。如果没有Xcode可以参考Hexo官网上的安装方法。</p>
+<p>安装Hexo<br>当Node.js和Git都安装好后就可以正式安装Hexo了，终端执行如下命令：</p>
+<p>$ npm install -g hexo 如不行执行下面<br>$ sudo npm install -g hexo<br>输入管理员密码（Mac登录密码）即开始安装 (sudo:linux系统管理指令 -g:全局安装)<br>注意坑一：<a href="https://hexo.io/docs" target="_blank" rel="noopener">Hexo官网</a>上的安装命令是$ npm install -g hexo-cli，安装时不要忘记前面加上sudo，否则会因为权限问题报错。</p>
+<p>初始化<br>终端cd到一个你选定的目录，执行hexo init命令：</p>
+<p>$ hexo init blog<br>blog是你建立的文件夹名称。cd到blog文件夹下，执行如下命令，安装npm：</p>
+<p>$ npm install<br>执行如下命令，开启hexo服务器：</p>
+<p>$ hexo s<br>此时，浏览器中打开网址 <a href="http://localhost:4000，能看到如下页面：" target="_blank" rel="noopener">http://localhost:4000，能看到如下页面：</a></p>
+<p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p>本地设置好后，接下来开始关联Github。</p>
+<p>关联Github<br>添加ssh key到Github<br>检查SSH keys是否存在Github<br>执行如下命令，检查SSH keys是否存在。如果有文件id_rsa.pub或id_dsa.pub，则直接进入步骤1.3将SSH key添加到Github中，否则进入下一步生成SSH key。</p>
+<p>$ ls -al ~/.ssh<br>生成新的ssh key<br>执行如下命令生成public/private rsa key pair，注意将your_email@example.com换成你自己注册Github的邮箱地址。</p>
+<p>$ ssh-keygen -t rsa -C “your_email@example.com”<br>默认会在相应路径下（~/.ssh/id_rsa.pub）生成id_rsa和id_rsa.pub两个文件。</p>
+<p>将ssh key添加到Github中<br>Find前往文件夹~/.ssh/id_rsa.pub打开id_rsa.pub文件，里面的信息即为SSH key，将这些信息复制到Github的Add SSH key页面即可。</p>
+<p>进入Github –&gt; Settings –&gt; SSH keys –&gt; add SSH key:</p>
+<p>Title里任意添一个标题，将复制的内容粘贴到Key里，点击下方Add key绿色按钮即可。</p>
+<p>创建仓库<br>登录你的Github帐号，新建仓库，名为用户名.github.io固定写法，如jeasonstudio.github.io,如下图所示：</p>
+<p>Exmp</p>
+<p>本地的blog文件夹下内容为：<br>_config.yml<br>db.json<br>node_modules<br>package.json<br>scaffolds<br>source<br>themes<br>终端cd到blog文件夹下，vim打开_config.yml，命令如下：</p>
+<p>$ vim _config.yml<br>打开后往下滑到最后，修改成下边的样子：</p>
+<p>deploy:<br>    type: git<br>    repository: <a href="https://github.com/jeasonstudio/jeasonstudio.github.io.git" target="_blank" rel="noopener">https://github.com/jeasonstudio/jeasonstudio.github.io.git</a><br>   branch: master<br>你需要将repository后jeasonstudio换成你自己的用户名，地址在上图2位置获取。hexo 3.1.1版本后type:值为git。</p>
+<p>注意坑二：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记</p>
+<p>在blog文件夹目录下执行生成静态页面命令：</p>
+<p>$ hexo generate        或者：hexo g<br>此时若出现如下报错：<br>ERROR Local hexo not found in ~/blog<br>ERROR Try runing: ‘npm install hexo –save’<br>则执行命令：<br>npm install hexo –save<br>若无报错，自行忽略此步骤。</p>
+<p>再执行配置命令：</p>
+<p>$ hexo deploy            或者：hexo d<br>注意坑三：若执行命令hexo deploy仍然报错：无法连接git，则执行如下命令来安装hexo-deployer-git：</p>
+<p>$ npm install –save hexo-developer-git 或 $ npm install hexo-developer-git –save<br>再次执行hexo generate和hexo deploy命令</p>
+<p>此时，浏览器中打开网址<a href="http://jeasonstudio.github.io（将jeasonstudio换成你的用户名）能看到和打开http://localhost:4000时一样的页面。" target="_blank" rel="noopener">http://jeasonstudio.github.io（将jeasonstudio换成你的用户名）能看到和打开http://localhost:4000时一样的页面。</a></p>
+<p>发布文章<br>终端cd到blog文件夹下，执行如下命令新建文章：</p>
+<p>hexo new “postName”<br>名为postName.md的文件会建在目录/blog/source/_posts下。你当然可以用vim来编辑文章。</p>
+<p>在此说明一下，我一直都在用微软的 VSCode编辑器来编写MarkDown，如果你有什么更好的建议，我会非常感激的。<br>另外MarkDown格式的语法教程，前面的博文里有，但我知道你懒，<a href="http://jeasonstudio.github.io/2016/04/06/Markdown-%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B/" target="_blank" rel="noopener">传送门</a>。</p>
+<p>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布：</p>
+<p>   hexo generate             //生成静态页面<br>   hexo deploy            //将文章部署到Github<br>   或者直接执行<br>   hexo g -d<br>至此，Mac上搭建基于Github的Hexo博客就完成了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/" data-id="cjfc9g4t6000b656n6nlmc4qg" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/Mac 安装配置android-ndk/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。 1234567891011/**    * 初始化Popupwindow    *    * @param inflater    */   private void initPopupWindow(LayoutInflater inflater) &amp;#123;       View view = in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/01/31/popuWindow/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。 1234567891011/**    * 初始化Popupwindow    *    * @param inflater    */   private void initPopupWindow(LayoutInflater inflater) &amp;#123;       View view = in">
+<meta property="og:image" content="http://ds.devstore.cn/dev_store/user/souce_code/img/20141203095404358zn2rocx6/应用宝动态截屏20141203011.gif">
+<meta property="og:updated_time" content="2018-01-31T07:57:34.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。 1234567891011/**    * 初始化Popupwindow    *    * @param inflater    */   private void initPopupWindow(LayoutInflater inflater) &amp;#123;       View view = in">
+<meta name="twitter:image" content="http://ds.devstore.cn/dev_store/user/souce_code/img/20141203095404358zn2rocx6/应用宝动态截屏20141203011.gif">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-popuWindow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/31/popuWindow/" class="article-date">
+  <time datetime="2018-01-31T07:57:34.422Z" itemprop="datePublished">2018-01-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。"><a href="#长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。" class="headerlink" title="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。"></a>长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。</h3><p><img src="http://ds.devstore.cn/dev_store/user/souce_code/img/20141203095404358zn2rocx6/应用宝动态截屏20141203011.gif" alt="header"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 初始化Popupwindow</span><br><span class="line">    *</span><br><span class="line">    * @param inflater</span><br><span class="line">    */</span><br><span class="line">   private void initPopupWindow(LayoutInflater inflater) &#123;</span><br><span class="line">       View view = inflater.inflate(R.layout.pop_item_layout, null);</span><br><span class="line">       popupWindow = new PopupWindow(view, 200, 100);</span><br><span class="line">       copyTv = (TextView) view.findViewById(R.id.pop_copy_tv);</span><br><span class="line">       deleteTv = (TextView) view.findViewById(R.id.pop_delete_tv);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * Popupwindow显示</span><br><span class="line">    *</span><br><span class="line">    * @param v</span><br><span class="line">    */</span><br><span class="line">   @SuppressWarnings(&quot;deprecation&quot;)</span><br><span class="line">   private void showPop(View v) &#123;</span><br><span class="line">       popupWindow.setFocusable(false);</span><br><span class="line">       popupWindow.setOutsideTouchable(true);</span><br><span class="line">       popupWindow.setBackgroundDrawable(new BitmapDrawable());// 设置此项可点击Popupwindow外区域消失，注释则不消失</span><br><span class="line"></span><br><span class="line">       // 设置出现位置</span><br><span class="line">       int[] location = new int[2];</span><br><span class="line">       v.getLocationOnScreen(location);</span><br><span class="line">       popupWindow.showAtLocation(v, Gravity.NO_GRAVITY,</span><br><span class="line">               location[0] + v.getWidth() / 2 - popupWindow.getWidth() / 2,</span><br><span class="line">               location[1] - popupWindow.getHeight());</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/31/popuWindow/" data-id="cjfc9g4ty000m656nz7d8tkh1" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/04/知乎上 Android 开发话题优秀回答/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/30/Kinder 阅读转换器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/Mac 安装配置android-ndk/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

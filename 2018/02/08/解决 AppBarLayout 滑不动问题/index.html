@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="解决AppBarLayout滑不动的问题使用Android 5.0中新添加的AppBarLayout可以比较方便的实现如下的效果 Layout布局文件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/02/08/解决 AppBarLayout 滑不动问题/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="解决AppBarLayout滑不动的问题使用Android 5.0中新添加的AppBarLayout可以比较方便的实现如下的效果 Layout布局文件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667">
+<meta property="og:image" content="http://img.blog.csdn.net/20161016141731645">
+<meta property="og:updated_time" content="2018-02-08T02:31:25.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="解决AppBarLayout滑不动的问题使用Android 5.0中新添加的AppBarLayout可以比较方便的实现如下的效果 Layout布局文件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20161016141731645">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-解决 AppBarLayout 滑不动问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/08/解决 AppBarLayout 滑不动问题/" class="article-date">
+  <time datetime="2018-02-08T01:46:21.499Z" itemprop="datePublished">2018-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解决AppBarLayout滑不动的问题"><a href="#解决AppBarLayout滑不动的问题" class="headerlink" title="解决AppBarLayout滑不动的问题"></a>解决AppBarLayout滑不动的问题</h1><p>使用Android 5.0中新添加的AppBarLayout可以比较方便的实现如下的效果<br><img src="http://img.blog.csdn.net/20161016141731645" alt="header"></p>
+<p>Layout布局文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;android.support.design.widget.CoordinatorLayout</span><br><span class="line">    android:id=&quot;@+id/main_content&quot;</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    &gt;</span><br><span class="line"></span><br><span class="line">    &lt;android.support.design.widget.AppBarLayout</span><br><span class="line">        android:id=&quot;@+id/appbarLayout&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;200dp&quot;</span><br><span class="line">        android:fitsSystemWindows=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;android.support.design.widget.CollapsingToolbarLayout</span><br><span class="line">            android:id=&quot;@+id/collapsingToolbar&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;match_parent&quot;</span><br><span class="line">            android:fitsSystemWindows=&quot;true&quot;</span><br><span class="line">            app:contentScrim=&quot;?attr/colorPrimary&quot;</span><br><span class="line">            app:expandedTitleMarginEnd=&quot;64dp&quot;</span><br><span class="line">            app:expandedTitleMarginStart=&quot;48dp&quot;</span><br><span class="line">            app:layout_scrollFlags=&quot;scroll|snap|exitUntilCollapsed|enterAlwaysCollapsed&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;LinearLayout</span><br><span class="line">                android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                android:layout_height=&quot;match_parent&quot;</span><br><span class="line">                android:orientation=&quot;vertical&quot;</span><br><span class="line">                app:layout_collapseMode=&quot;parallax&quot;</span><br><span class="line">                &gt;</span><br><span class="line"></span><br><span class="line">                &lt;ImageView</span><br><span class="line">                    android:layout_width=&quot;60dp&quot;</span><br><span class="line">                    android:layout_height=&quot;60dp&quot;</span><br><span class="line">                    android:layout_marginTop=&quot;50dp&quot;</span><br><span class="line">                    android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">                    android:background=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">                    /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;TextView</span><br><span class="line">                    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                    android:text=&quot;火星社&quot;</span><br><span class="line">                    android:textSize=&quot;15dp&quot;</span><br><span class="line">                    android:textColor=&quot;@android:color/white&quot;</span><br><span class="line">                    android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">                    android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">                    /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;LinearLayout</span><br><span class="line">                    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                    android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">                    android:layout_marginTop=&quot;8dp&quot;</span><br><span class="line">                    &gt;</span><br><span class="line"></span><br><span class="line">                    &lt;View</span><br><span class="line">                        android:layout_width=&quot;30dp&quot;</span><br><span class="line">                        android:layout_height=&quot;1dp&quot;</span><br><span class="line">                        android:background=&quot;@android:color/white&quot;</span><br><span class="line">                        android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;TextView</span><br><span class="line">                        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                        android:text=&quot;专注于国内外最新最热的自媒体&quot;</span><br><span class="line">                        android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">                        android:layout_marginLeft=&quot;5dp&quot;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;View</span><br><span class="line">                        android:layout_width=&quot;30dp&quot;</span><br><span class="line">                        android:layout_height=&quot;1dp&quot;</span><br><span class="line">                        android:background=&quot;@android:color/white&quot;</span><br><span class="line">                        android:layout_gravity=&quot;center_vertical&quot;</span><br><span class="line">                        android:layout_marginLeft=&quot;5dp&quot;</span><br><span class="line">                        /&gt;</span><br><span class="line">                &lt;/LinearLayout&gt;</span><br><span class="line">            &lt;/LinearLayout&gt;</span><br><span class="line"></span><br><span class="line">            &lt;android.support.v7.widget.Toolbar</span><br><span class="line">                android:id=&quot;@+id/toolbar&quot;</span><br><span class="line">                android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                android:layout_height=&quot;?attr/actionBarSize&quot;</span><br><span class="line">                app:layout_collapseMode=&quot;pin&quot;</span><br><span class="line">                app:popupTheme=&quot;@style/ThemeOverlay.AppCompat.Light&quot;</span><br><span class="line">                &gt;</span><br><span class="line"></span><br><span class="line">                &lt;RelativeLayout</span><br><span class="line">                    android:id=&quot;@+id/titleView&quot;</span><br><span class="line">                    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">                    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">                    android:visibility=&quot;visible&quot;</span><br><span class="line">                    &gt;</span><br><span class="line"></span><br><span class="line">                    &lt;TextView</span><br><span class="line">                        android:id=&quot;@+id/titleText&quot;</span><br><span class="line">                        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                        android:text=&quot;火星社&quot;</span><br><span class="line">                        android:textSize=&quot;18dp&quot;</span><br><span class="line">                        android:textColor=&quot;@android:color/white&quot;</span><br><span class="line">                        android:layout_centerInParent=&quot;true&quot;</span><br><span class="line">                        android:alpha=&quot;0&quot;</span><br><span class="line">                        /&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;TextView</span><br><span class="line">                        android:id=&quot;@+id/communityConnect&quot;</span><br><span class="line">                        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">                        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">                        android:textColor=&quot;#ffffff&quot;</span><br><span class="line">                        android:text=&quot;+ 关注&quot;</span><br><span class="line">                        android:textSize=&quot;16dp&quot;</span><br><span class="line">                        android:layout_gravity=&quot;right&quot;</span><br><span class="line">                        android:layout_alignParentRight=&quot;true&quot;</span><br><span class="line">                        android:layout_centerVertical=&quot;true&quot;</span><br><span class="line">                        android:layout_marginRight=&quot;8dp&quot;</span><br><span class="line">                        /&gt;</span><br><span class="line">                &lt;/RelativeLayout&gt;</span><br><span class="line">            &lt;/android.support.v7.widget.Toolbar&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/android.support.design.widget.CollapsingToolbarLayout&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/android.support.design.widget.AppBarLayout&gt;</span><br><span class="line"></span><br><span class="line">    &lt;android.support.v7.widget.RecyclerView</span><br><span class="line">        android:id=&quot;@+id/videoCommunityRecyclerview&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;</span><br><span class="line">        android:background=&quot;@android:color/white&quot;</span><br><span class="line">        android:clipToPadding=&quot;false&quot;</span><br><span class="line">        android:overScrollMode=&quot;never&quot;</span><br><span class="line">        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;</span><br><span class="line">        /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在布局文件的定义中：<br>用CoordinatorLayout包住AppBarLayout,滚动 view 是 RecyclerView。</p>
+<p>这样就实现了一个简单的 RecyclerView 与 appbarLayout 的级联滚动效果了，但是实现完成之后有一个问题就是，当我 只要在 滚动 view 区域内触摸过，再去 AppBarLayout 区域进行触摸滑动时 appbarLayout 区域内容就滑动不了，而只可以在滚动 view 区域内滑动。</p>
+<p><strong><em>我自己实现的解决办法是在 AppBarLayout 里添加 ScrollView 就可以解决。但引出一个 bug 就是有自定义的下拉刷新失效了</em></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/08/解决 AppBarLayout 滑不动问题/" data-id="cjfc9g4u8000y656np8249o32" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/09/AS 开发预览小技巧 tools/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/04/点9图片/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/Mac 安装配置android-ndk/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

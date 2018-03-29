@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[转载]android 常见分辨率（mdpi、hdpi 、xhdpi、xxhdpi ）及屏幕适配注意事项1 Android手机目前常见的分辨率 1.1 手机常见分辨率: 1234567891011121314151617184:3VGA     640*480 (Video Graphics Array)QVGA  320*240 (Quarter VGA)HVGA  480*320 (Half-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/02/04/Android 常见分辨率及屏幕适配注意事项/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[转载]android 常见分辨率（mdpi、hdpi 、xhdpi、xxhdpi ）及屏幕适配注意事项1 Android手机目前常见的分辨率 1.1 手机常见分辨率: 1234567891011121314151617184:3VGA     640*480 (Video Graphics Array)QVGA  320*240 (Quarter VGA)HVGA  480*320 (Half-">
+<meta property="og:updated_time" content="2018-02-04T10:20:33.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="[转载]android 常见分辨率（mdpi、hdpi 、xhdpi、xxhdpi ）及屏幕适配注意事项1 Android手机目前常见的分辨率 1.1 手机常见分辨率: 1234567891011121314151617184:3VGA     640*480 (Video Graphics Array)QVGA  320*240 (Quarter VGA)HVGA  480*320 (Half-">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Android 常见分辨率及屏幕适配注意事项" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/04/Android 常见分辨率及屏幕适配注意事项/" class="article-date">
+  <time datetime="2018-02-04T10:17:51.984Z" itemprop="datePublished">2018-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="转载-android-常见分辨率（mdpi、hdpi-、xhdpi、xxhdpi-）及屏幕适配注意事项"><a href="#转载-android-常见分辨率（mdpi、hdpi-、xhdpi、xxhdpi-）及屏幕适配注意事项" class="headerlink" title="[转载]android 常见分辨率（mdpi、hdpi 、xhdpi、xxhdpi ）及屏幕适配注意事项"></a>[转载]<a href="http://blog.csdn.net/sarsscofy/article/details/9249397" target="_blank" rel="noopener">android 常见分辨率（mdpi、hdpi 、xhdpi、xxhdpi ）及屏幕适配注意事项</a></h1><h3 id="1-Android手机目前常见的分辨率"><a href="#1-Android手机目前常见的分辨率" class="headerlink" title="1 Android手机目前常见的分辨率"></a>1 Android手机目前常见的分辨率</h3><p> 1.1 手机常见分辨率:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">4:3</span><br><span class="line">VGA     640*480 (Video Graphics Array)</span><br><span class="line">QVGA  320*240 (Quarter VGA)</span><br><span class="line">HVGA  480*320 (Half-size VGA)</span><br><span class="line">SVGA  800*600 (Super VGA)</span><br><span class="line">5:3</span><br><span class="line">WVGA  800*480 (Wide VGA)</span><br><span class="line">16:9</span><br><span class="line">FWVGA 854*480 (Full Wide VGA)</span><br><span class="line">HD        1920*1080 High Definition</span><br><span class="line">QHD     960*540</span><br><span class="line">720p    1280*720  标清</span><br><span class="line">1080p  1920*1080 高清</span><br><span class="line">手机:</span><br><span class="line">iphone 4/4s    960*640 (3:2)</span><br><span class="line">iphone5         1136*640</span><br><span class="line">小米1             854*480(FWVGA)</span><br><span class="line">小米2             1280*720</span><br></pre></td></tr></table></figure></p>
+<p>1.2 分辨率对应DPI<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;HVGA    mdpi&quot;</span><br><span class="line">&quot;WVGA   hdpi &quot;</span><br><span class="line">&quot;FWVGA hdpi &quot;</span><br><span class="line">&quot;QHD      hdpi &quot;</span><br><span class="line">&quot;720P     xhdpi&quot;</span><br><span class="line">&quot;1080P   xxhdpi &quot;</span><br></pre></td></tr></table></figure></p>
+<p>2 屏幕适配的注意事项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">2.1 基本设置</span><br><span class="line">2.1.1 AndroidManifest.xml设置</span><br><span class="line">在中Menifest中添加子元素</span><br><span class="line">android:anyDensity=&quot;true&quot;时，应用程序安装在不同密度的终端上时，程序会分别加载xxhdpi、xhdpi、hdpi、mdpi、ldpi文件夹中的资源。</span><br><span class="line">相反，如果设为false，即使在文件夹下拥有相同资源，应用不会自动地去相应文件夹下寻找资源：</span><br><span class="line">1) 如果drawable-hdpi、drawable-mdpi、drawable-ldpi三个文件夹中有同一张图片资源的不同密度表示，那么系统会去加载drawable_mdpi文件夹中的资源；</span><br><span class="line">2) 如果drawable-hpdi中有高密度图片，其它两个文件夹中没有对应图片资源，那么系统会去加载drawable-hdpi中的资源，其他同理；</span><br><span class="line">3) 如果drawable-hdpi,drawable-mdpi中有图片资源，drawable-ldpi中没有，系统会加载drawable-mdpi中的资源，其他同理，使用最接近的密度级别。</span><br><span class="line">2.1.2 横屏竖屏目录区分</span><br><span class="line">1) drawable</span><br><span class="line">a) drawable-hdpi该图片即适用于横屏，也适用于竖屏；</span><br><span class="line">b) drawable-land-hdpi,当屏幕为横屏，且为高密度时，加载此文件夹的资源；</span><br><span class="line">c) drawable-port-hdpi,当屏幕为竖屏，且为高密度时，加载此文件夹中的资源。其他同理。</span><br><span class="line">2) layout</span><br><span class="line">在res目录下建立layout-port和layout-land两个目录，里面分别放置竖屏和横屏两种布局文件，以适应对横屏竖屏自动切换。</span><br></pre></td></tr></table></figure></p>
+<p>2.2 多屏幕适配的4条黄金原则<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1) 在layout文件中设置控件尺寸时应采用fill_parent、wrap_content、match_parent和dp；</span><br><span class="line">具体来说，设置view的属性android:layout_width和android:layout_height的值时，wrap_content，match_parent或dp比px更好，文字大小应该使用sp来定义。</span><br><span class="line">2) 在程序的代码中不要出现具体的像素值，在dimens.xml中定义；</span><br><span class="line">为了使代码简单，android内部使用pix为单位表示控件的尺寸，但这是基于当前屏幕基础上的。为了适应多种屏幕，android建议开发者不要使用具体的像素来表示控件尺寸。</span><br><span class="line">3) 不使用AbsoluteLayout(android1.5已废弃) ，可以使用RelativeLayout替代；</span><br><span class="line">4) 对不同的屏幕提供合适大小的图片。</span><br><span class="line">不同大小屏幕用不同大小的图片，low:medium:high:extra-high图片大小的比例为3:4:6:8；举例来说，对于中等密度(medium)的屏幕你的图片像素大小为48×48，那么低密度(low)屏幕的图片大小应为36×36，高(high)的为72×72，extra-high为96×96。</span><br></pre></td></tr></table></figure></p>
+<p>2.3 使用9-patch PNG图片<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用图片资源时，如果出现拉伸，因为图片处理的原因，会变形，导致界面走形。9-patch PNG图片也是一种标准的PGN图片，在原生PNG图片四周空出一个像素间隔，用来标识PNG图片中哪些部分可以拉伸、哪些不可以拉伸、背景上的边框位置等。</span><br><span class="line">“上、左”定义可拉伸区域</span><br><span class="line">“右、下”定义显示区域，如果用到完整填充的背景图，建议不要通过android:padding来设置边距，而是通过9-patch方式来定义。</span><br><span class="line">Android SDK中提供了编辑9-Patch图片的工具，在tools目录下draw9patch.bat，能够立刻看到编辑后的拉伸效果，也可以直接用其他图片编辑工具编辑，但是看不到效果。</span><br></pre></td></tr></table></figure></p>
+<p>2.4 不同的layout<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Android手机屏幕大小不一，有480x320, 640x360, 800x480……</span><br><span class="line">怎样才能让Application自动适应不同的屏幕呢？</span><br><span class="line">其实很简单，只需要在res目录下创建不同的layout文件夹，比如：layout-640x360、layout-800x480……所有的layout文件在编译之后都会写入R.java里，而系统会根据屏幕的大小自己选择合适的layout进行使用。</span><br></pre></td></tr></table></figure></p>
+<p>2.5 测试验证<br>一般使用AVD Manager创建多个不同大小的模拟器，如果条件具备，也可以直接用真机测试，这个比较靠谱。<br>3 参考资料<br><a href="http://blog.csdn.net/guozh/article/details/8954994" target="_blank" rel="noopener">http://blog.csdn.net/guozh/article/details/8954994</a><br> <a href="http://my.eoe.cn/cainiao1/archive/2348.html（皇马船长）" target="_blank" rel="noopener">http://my.eoe.cn/cainiao1/archive/2348.html（皇马船长）</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/04/Android 常见分辨率及屏幕适配注意事项/" data-id="cjfc9g4sw0001656n9eoglhhm" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/04/点9图片/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/04/知乎上 Android 开发话题优秀回答/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/Mac 安装配置android-ndk/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
