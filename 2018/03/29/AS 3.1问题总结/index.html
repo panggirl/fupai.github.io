@@ -7,16 +7,16 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Absolute path are not supported when setting an output file name在 Android Studio 3.0 12project/build.gradle:classpath &amp;apos;com.android.tools.build:gradle:3.0.1&amp;apos; 时一切正常，但升级到 Android Studio 3.1同时升级">
+  <meta name="description" content="1、 app/build.gradle: 配置apk输出路径问题：Error:1Absolute path are not supported when setting an output file name  解决方法：app/build.gradle:def releaseFileName = “${rootProject.name}_${defaultConfig.versionName}.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/03/29/AS 3.1问题总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Absolute path are not supported when setting an output file name在 Android Studio 3.0 12project/build.gradle:classpath &amp;apos;com.android.tools.build:gradle:3.0.1&amp;apos; 时一切正常，但升级到 Android Studio 3.1同时升级">
-<meta property="og:updated_time" content="2018-03-29T08:29:07.793Z">
+<meta property="og:description" content="1、 app/build.gradle: 配置apk输出路径问题：Error:1Absolute path are not supported when setting an output file name  解决方法：app/build.gradle:def releaseFileName = “${rootProject.name}_${defaultConfig.versionName}.">
+<meta property="og:updated_time" content="2018-03-29T08:48:30.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Absolute path are not supported when setting an output file name在 Android Studio 3.0 12project/build.gradle:classpath &amp;apos;com.android.tools.build:gradle:3.0.1&amp;apos; 时一切正常，但升级到 Android Studio 3.1同时升级">
+<meta name="twitter:description" content="1、 app/build.gradle: 配置apk输出路径问题：Error:1Absolute path are not supported when setting an output file name  解决方法：app/build.gradle:def releaseFileName = “${rootProject.name}_${defaultConfig.versionName}.">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-升级 AS 到 3.1 报绝对路径问题错误" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-AS 3.1问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/" class="article-date">
-  <time datetime="2018-03-29T08:24:53.012Z" itemprop="datePublished">2018-03-29</time>
+    <a href="/2018/03/29/AS 3.1问题总结/" class="article-date">
+  <time datetime="2018-03-29T08:48:30.363Z" itemprop="datePublished">2018-03-29</time>
 </a>
     
   </div>
@@ -75,17 +75,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Absolute-path-are-not-supported-when-setting-an-output-file-name"><a href="#Absolute-path-are-not-supported-when-setting-an-output-file-name" class="headerlink" title="Absolute path are not supported when setting an output file name"></a>Absolute path are not supported when setting an output file name</h1><p>在 <code>Android Studio 3.0</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">project/build.gradle:</span><br><span class="line">classpath &apos;com.android.tools.build:gradle:3.0.1&apos;</span><br></pre></td></tr></table></figure>
-<p>时一切正常，但升级到 <code>Android Studio 3.1</code>同时升级<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">project/build:gradle :</span><br><span class="line">classpath &apos;com.android.tools.build:gradle:3.1.0&apos;</span><br></pre></td></tr></table></figure></p>
-<p>配置的输出目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app/build.gradle:</span><br><span class="line">def releaseFileName = &quot;$&#123;rootProject.name&#125;_$&#123;defaultConfig.versionName&#125;.apk&quot;</span><br><span class="line">outputFileName = rootProject.projectDir.absolutePath + releaseFileName.toLowerCase()</span><br><span class="line">或</span><br><span class="line">outputFileName = &quot;/../../../../../release/&quot; + releaseFileName.toLowerCase()</span><br></pre></td></tr></table></figure></p>
-<h4 id="Error"><a href="#Error" class="headerlink" title="Error:"></a>Error:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Absolute path are not supported when setting an output file name</span><br></pre></td></tr></table></figure>
-<h5 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app/build.gradle:</span><br><span class="line">def releaseFileName = &quot;$&#123;rootProject.name&#125;_$&#123;defaultConfig.versionName&#125;.apk&quot;</span><br><span class="line">outputFileName = &quot;../../../../../release/&quot; + releaseFileName.toLowerCase()</span><br></pre></td></tr></table></figure>
+        <h4 id="1、-app-build-gradle-配置apk输出路径问题："><a href="#1、-app-build-gradle-配置apk输出路径问题：" class="headerlink" title="1、 app/build.gradle: 配置apk输出路径问题："></a>1、 app/build.gradle: 配置apk输出路径问题：</h4><p><code>Error:</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Absolute path are not supported when setting an output file name</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>解决方法：<br>app/build.gradle:<br>def releaseFileName = “${rootProject.name}_${defaultConfig.versionName}.apk”<br>outputFileName = “../../../../../release/“ + releaseFileName.toLowerCase()</p>
+</blockquote>
+<h5 id="2、Error"><a href="#2、Error" class="headerlink" title="2、Error:"></a>2、<code>Error:</code></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instrumentTest has been deprecated and does not work with modern Gradle versions - which you probably updated in your project when upgrading Android Studio.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解决方法：把 instrumentTest 替换为 androidTest</p>
+</blockquote>
+<h5 id="3、WARNING-Configuration-‘compile’-is-obsolete-and-has-been-replaced-with-‘implementation’"><a href="#3、WARNING-Configuration-‘compile’-is-obsolete-and-has-been-replaced-with-‘implementation’" class="headerlink" title="3、WARNING: Configuration ‘compile’ is obsolete and has been replaced with ‘implementation’."></a>3、WARNING: Configuration ‘compile’ is obsolete and has been replaced with ‘implementation’.</h5><p>在3.0版本中，compile 指令被标注为过时方法，而新增了两个依赖指令，一个是implement 和api，这两个都可以进行依赖添加，但是有什么区别呢？<br>api 指令</p>
+<p>完全等同于compile指令，没区别，你将所有的compile改成api，完全没有错。<br>implement指令</p>
+<p>这个指令的特点就是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。</p>
+<p><code>建议</code></p>
+<blockquote>
+<p>在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implement的，如果没有错，那就用implement，如果有错，那么使用api指令，这样会使编译速度有所增快。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">明明全部更改为 implementation，还是提示上面的提示大概是因为：</span><br><span class="line">The problem lies in apply plugin: &apos;com.google.gms.google-services&apos;</span><br><span class="line">The Google Services plugin is adding a dependency on behalf of you. Hopefully they fix it in the future.</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/" data-id="cjfc9g4u1000p656n3vffeh2o" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2018/03/29/AS 3.1问题总结/" data-id="cjfca3syb0000756naz2nh6r2" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -94,17 +104,8 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/29/AS 3.1问题总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/22/知识点/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title"></div>
     </a>
