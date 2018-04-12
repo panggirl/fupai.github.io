@@ -97,6 +97,79 @@
 
 
   
+    <article id="post-Mac上搭建基于GitHub Page的Hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/" class="article-date">
+  <time datetime="2018-01-15T10:48:07.000Z" itemprop="datePublished">2018-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/">Mac上搭建基于GitHub Page的Hexo博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[参考1]<a href="http://jeasonstudio.github.io/2016/05/26/Mac%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGitHub-Page%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">Mac上搭建基于GitHub Page的Hexo博客</a></p>
+<p>环境配置<br><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo官网</a>上本就有对Hexo安装及使用的详细介绍，墙裂推荐。这里来讲述自己安装的亲身步骤，或有区别。</p>
+<p>Node.js<br>用来生成静态页面。移步<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网</a>，下载v5.5.0 Stable 一路安装即可。</p>
+<p>Git<br>用来将本地Hexo内容提交到Github上。Xcode自带Git，这里不再赘述。如果没有Xcode可以参考Hexo官网上的安装方法。</p>
+<p>安装Hexo<br>当Node.js和Git都安装好后就可以正式安装Hexo了，终端执行如下命令：</p>
+<p>$ npm install -g hexo 如不行执行下面<br>$ sudo npm install -g hexo<br>输入管理员密码（Mac登录密码）即开始安装 (sudo:linux系统管理指令 -g:全局安装)<br>注意坑一：<a href="https://hexo.io/docs" target="_blank" rel="noopener">Hexo官网</a>上的安装命令是$ npm install -g hexo-cli，安装时不要忘记前面加上sudo，否则会因为权限问题报错。</p>
+<p>初始化<br>终端cd到一个你选定的目录，执行hexo init命令：</p>
+<p>$ hexo init blog<br>blog是你建立的文件夹名称。cd到blog文件夹下，执行如下命令，安装npm：</p>
+<p>$ npm install<br>执行如下命令，开启hexo服务器：</p>
+<p>$ hexo s<br>此时，浏览器中打开网址 <a href="http://localhost:4000，能看到如下页面：" target="_blank" rel="noopener">http://localhost:4000，能看到如下页面：</a></p>
+<p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p>本地设置好后，接下来开始关联Github。</p>
+<p>关联Github<br>添加ssh key到Github<br>检查SSH keys是否存在Github<br>执行如下命令，检查SSH keys是否存在。如果有文件id_rsa.pub或id_dsa.pub，则直接进入步骤1.3将SSH key添加到Github中，否则进入下一步生成SSH key。</p>
+<p>$ ls -al ~/.ssh<br>生成新的ssh key<br>执行如下命令生成public/private rsa key pair，注意将your_email@example.com换成你自己注册Github的邮箱地址。</p>
+<p>$ ssh-keygen -t rsa -C “your_email@example.com”<br>默认会在相应路径下（~/.ssh/id_rsa.pub）生成id_rsa和id_rsa.pub两个文件。</p>
+<p>将ssh key添加到Github中<br>Find前往文件夹~/.ssh/id_rsa.pub打开id_rsa.pub文件，里面的信息即为SSH key，将这些信息复制到Github的Add SSH key页面即可。</p>
+<p>进入Github –&gt; Settings –&gt; SSH keys –&gt; add SSH key:</p>
+<p>Title里任意添一个标题，将复制的内容粘贴到Key里，点击下方Add key绿色按钮即可。</p>
+<p>创建仓库<br>登录你的Github帐号，新建仓库，名为用户名.github.io固定写法，如jeasonstudio.github.io,如下图所示：</p>
+<p>Exmp</p>
+<p>本地的blog文件夹下内容为：<br>_config.yml<br>db.json<br>node_modules<br>package.json<br>scaffolds<br>source<br>themes<br>终端cd到blog文件夹下，vim打开_config.yml，命令如下：</p>
+<p>$ vim _config.yml<br>打开后往下滑到最后，修改成下边的样子：</p>
+<p>deploy:<br>    type: git<br>    repository: <a href="https://github.com/jeasonstudio/jeasonstudio.github.io.git" target="_blank" rel="noopener">https://github.com/jeasonstudio/jeasonstudio.github.io.git</a><br>   branch: master<br>你需要将repository后jeasonstudio换成你自己的用户名，地址在上图2位置获取。hexo 3.1.1版本后type:值为git。</p>
+<p>注意坑二：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记</p>
+<p>在blog文件夹目录下执行生成静态页面命令：</p>
+<p>$ hexo generate        或者：hexo g<br>此时若出现如下报错：<br>ERROR Local hexo not found in ~/blog<br>ERROR Try runing: ‘npm install hexo –save’<br>则执行命令：<br>npm install hexo –save<br>若无报错，自行忽略此步骤。</p>
+<p>再执行配置命令：</p>
+<p>$ hexo deploy            或者：hexo d<br>注意坑三：若执行命令hexo deploy仍然报错：无法连接git，则执行如下命令来安装hexo-deployer-git：</p>
+<p>$ npm install –save hexo-developer-git 或 $ npm install hexo-developer-git –save<br>再次执行hexo generate和hexo deploy命令</p>
+<p>此时，浏览器中打开网址<a href="http://jeasonstudio.github.io（将jeasonstudio换成你的用户名）能看到和打开http://localhost:4000时一样的页面。" target="_blank" rel="noopener">http://jeasonstudio.github.io（将jeasonstudio换成你的用户名）能看到和打开http://localhost:4000时一样的页面。</a></p>
+<p>发布文章<br>终端cd到blog文件夹下，执行如下命令新建文章：</p>
+<p>hexo new “postName”<br>名为postName.md的文件会建在目录/blog/source/_posts下。你当然可以用vim来编辑文章。</p>
+<p>在此说明一下，我一直都在用微软的 VSCode编辑器来编写MarkDown，如果你有什么更好的建议，我会非常感激的。<br>另外MarkDown格式的语法教程，前面的博文里有，但我知道你懒，<a href="http://jeasonstudio.github.io/2016/04/06/Markdown-%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B/" target="_blank" rel="noopener">传送门</a>。</p>
+<p>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布：</p>
+<p>   hexo generate             //生成静态页面<br>   hexo deploy            //将文章部署到Github<br>   或者直接执行<br>   hexo g -d<br>至此，Mac上搭建基于Github的Hexo博客就完成了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/15/Mac上搭建基于GitHub Page的Hexo博客/" data-id="cjfc9g4t6000b656n6nlmc4qg" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-UX_UE_UI概念" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/15/UX_UE_UI概念/" class="article-date">
@@ -218,7 +291,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
   </div>
 
@@ -229,6 +302,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/12/Ruby安装/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/03/29/AS 3.1问题总结/">(no title)</a>
@@ -244,10 +321,6 @@
         
           <li>
             <a href="/2018/03/22/设计模式原则/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
           </li>
         
       </ul>

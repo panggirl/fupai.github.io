@@ -61,6 +61,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-列表滚动条的显示与隐藏及自定义样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/28/列表滚动条的显示与隐藏及自定义样式/" class="article-date">
+  <time datetime="2018-02-28T07:28:51.615Z" itemprop="datePublished">2018-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="列表滚动条的显示与隐藏及自定义滚动条样式"><a href="#列表滚动条的显示与隐藏及自定义滚动条样式" class="headerlink" title="列表滚动条的显示与隐藏及自定义滚动条样式"></a>列表滚动条的显示与隐藏及自定义滚动条样式</h1><h6 id="一、显示与隐藏"><a href="#一、显示与隐藏" class="headerlink" title="一、显示与隐藏"></a>一、显示与隐藏</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.v7.widget.RecyclerView</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;match_parent&quot;</span><br><span class="line">            android:scrollbars=&quot;vertical&quot;</span><br><span class="line">            &gt;</span><br><span class="line"></span><br><span class="line">        &lt;/android.support.v7.widget.RecyclerView&gt;</span><br></pre></td></tr></table></figure>
+<p>纵向显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=&quot;vertical&quot;</span><br></pre></td></tr></table></figure></p>
+<p>横向显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=&quot;horizontal&quot;</span><br></pre></td></tr></table></figure></p>
+<p>隐藏：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=&quot;none&quot;</span><br></pre></td></tr></table></figure></p>
+<h5 id="二、自定义滚动条效果样式"><a href="#二、自定义滚动条效果样式" class="headerlink" title="二、自定义滚动条效果样式"></a>二、自定义滚动条效果样式</h5><p>通过查看View属性，决定scrollbar的属性是<strong>android:scrollbarThumbVertical</strong>，这个属性是存在于View当中的，也就是说所有View，ViewGroup都能设置scrollbar。前提先设置滚动条显示。<br>好了，废话不多说，直接上效果图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953499-6ac19f4d4007a366.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/50" alt="header"></p>
+<p>再来看达到这个效果所需要的代码，在布局中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.v7.widget.RecyclerView</span><br><span class="line">android:id=&quot;@+id/test_listview&quot;</span><br><span class="line">android:layout_width=&quot;match_parent&quot;</span><br><span class="line">android:layout_height=&quot;match_parent&quot;</span><br><span class="line">android:scrollbarThumbVertical=&quot;@drawable/my_bar&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再来看drawable目录下的my_bar.xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;solid android:color=&quot;#999999&quot;/&gt;    &lt;!--设置颜色--&gt;</span><br><span class="line">&lt;size android:width=&quot;4dp&quot;/&gt;  &lt;!--设置宽度--&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这么简单就实现啦！<br>什么？没有边框？没有圆角？<br>那么加上就是了，不就是个属性嘛：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;solid android:color=&quot;#999999&quot;/&gt;</span><br><span class="line">&lt;size android:width=&quot;4dp&quot;/&gt;</span><br><span class="line">&lt;corners android:radius=&quot;2dp&quot;/&gt;</span><br><span class="line">&lt;stroke android:color=&quot;#111111&quot;  android:width=&quot;2px&quot;/&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再来看看效果：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953499-6125e5b403c21f7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/50" alt="header"></p>
+<p>我们再来和系统原生的scrollbar比较比较，发现原生的和右边边界有1px或2px的距离，而我们自定义的和右边是挨着的（在本文的图片中不好看出来，在真实的手机上能明显看到）。那么怎样才能达到那样的效果呢？<br>经过艰苦查找，终于发现了解决方法，将my_bar.xml稍作修改即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;item android:right=&quot;5dp&quot;&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;solid android:color=&quot;#999999&quot;/&gt;</span><br><span class="line">&lt;corners android:radius=&quot;2dp&quot;/&gt;</span><br><span class="line">&lt;stroke android:color=&quot;#111111&quot;    android:width=&quot;2px&quot;/&gt;</span><br><span class="line">&lt;size android:width=&quot;4dp&quot;/&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure></p>
+<p>来看看效果图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2953499-3a900196abd21a11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/47" alt="header"></p>
+<p>更改属性 with  可以调整滚动条的宽度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;size android:width=&quot;2dp&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/28/列表滚动条的显示与隐藏及自定义样式/" data-id="cjfc9g4u0000o656n3mnwlpji" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-android 转场动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/02/28/android 转场动画/" class="article-date">
@@ -485,35 +526,6 @@
 
 
   
-    <article id="post-popuWindow" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/31/popuWindow/" class="article-date">
-  <time datetime="2018-01-31T07:57:34.422Z" itemprop="datePublished">2018-01-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。"><a href="#长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。" class="headerlink" title="长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。"></a>长按出现Popupwindow弹窗，包含复制、删除选项，实现文本的复制、item控件删除功能。</h3><p><img src="http://ds.devstore.cn/dev_store/user/souce_code/img/20141203095404358zn2rocx6/应用宝动态截屏20141203011.gif" alt="header"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 初始化Popupwindow</span><br><span class="line">    *</span><br><span class="line">    * @param inflater</span><br><span class="line">    */</span><br><span class="line">   private void initPopupWindow(LayoutInflater inflater) &#123;</span><br><span class="line">       View view = inflater.inflate(R.layout.pop_item_layout, null);</span><br><span class="line">       popupWindow = new PopupWindow(view, 200, 100);</span><br><span class="line">       copyTv = (TextView) view.findViewById(R.id.pop_copy_tv);</span><br><span class="line">       deleteTv = (TextView) view.findViewById(R.id.pop_delete_tv);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * Popupwindow显示</span><br><span class="line">    *</span><br><span class="line">    * @param v</span><br><span class="line">    */</span><br><span class="line">   @SuppressWarnings(&quot;deprecation&quot;)</span><br><span class="line">   private void showPop(View v) &#123;</span><br><span class="line">       popupWindow.setFocusable(false);</span><br><span class="line">       popupWindow.setOutsideTouchable(true);</span><br><span class="line">       popupWindow.setBackgroundDrawable(new BitmapDrawable());// 设置此项可点击Popupwindow外区域消失，注释则不消失</span><br><span class="line"></span><br><span class="line">       // 设置出现位置</span><br><span class="line">       int[] location = new int[2];</span><br><span class="line">       v.getLocationOnScreen(location);</span><br><span class="line">       popupWindow.showAtLocation(v, Gravity.NO_GRAVITY,</span><br><span class="line">               location[0] + v.getWidth() / 2 - popupWindow.getWidth() / 2,</span><br><span class="line">               location[1] - popupWindow.getHeight());</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/31/popuWindow/" data-id="cjfc9g4ty000m656nz7d8tkh1" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -551,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
   </div>
 
@@ -562,6 +574,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/12/Ruby安装/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/03/29/AS 3.1问题总结/">(no title)</a>
@@ -577,10 +593,6 @@
         
           <li>
             <a href="/2018/03/22/设计模式原则/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
           </li>
         
       </ul>

@@ -61,6 +61,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ruby安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/12/Ruby安装/" class="article-date">
+  <time datetime="2018-04-12T07:42:01.623Z" itemprop="datePublished">2018-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mac-OS-系统安装-Ruby-环境"><a href="#Mac-OS-系统安装-Ruby-环境" class="headerlink" title="Mac OS 系统安装 Ruby 环境"></a>Mac OS 系统安装 Ruby 环境</h1><p><code>安装RVM</code></p>
+<p>RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。</p>
+<blockquote>
+<p>$ curl -L <a href="https://get.rvm.io" target="_blank" rel="noopener">https://get.rvm.io</a> | bash -s stable</p>
+</blockquote>
+<p>期间可能会问你sudo管理员密码，以及自动通过homebrew安装依赖包，等待一段时间后就可以成功安装好 RVM。</p>
+<p>然后，载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）</p>
+<blockquote>
+<p>$ source ~/.rvm/scripts/rvm</p>
+</blockquote>
+<p><code>检查一下是否安装正确 查看rvm</code></p>
+<blockquote>
+<p>$ rvm -v</p>
+</blockquote>
+<p>在终端输入rvm -v 一直提示“-bash: rvm: command not found’”</p>
+<p>于是重新安装rvm，其命令是：curl -L get.rvm.io | bash -s stable</p>
+<p>在安装时一直提示如下<br>这里写图片描述<br><img src="https://img-blog.csdn.net/20171214145207010?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWNmMDMyMTEyMzA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* WARNING: &apos;~/.profile&apos; file found. To load it into your shell, add the following line to &apos;/Users/youchunfen/.bash_profile&apos;:</span><br><span class="line"></span><br><span class="line">     source ~/.profile</span><br></pre></td></tr></table></figure></p>
+<p>之前没仔细看这个提示，一直在查，找的N多方法都不对～～～～<br>提示已经告诉我们了 ：打开.bash_profile文件，将“source ~/.profile”添加到里面去即可,然后再次安装下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、curl -L get.rvm.io | bash -s stable</span><br><span class="line">2、source ~/.bashrc</span><br><span class="line">3、source ~/.bash_profile</span><br><span class="line">4、rvm -v</span><br></pre></td></tr></table></figure></p>
+<p>rvm 1.29.3 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [<a href="https://rvm.io" target="_blank" rel="noopener">https://rvm.io</a>]</p>
+<p><code>用RVM安装Ruby环境</code></p>
+<p>查询已经安装的ruby</p>
+<blockquote>
+<p>$ rvm list</p>
+</blockquote>
+<p>列出已知的ruby版本</p>
+<blockquote>
+<p>$ rvm list known</p>
+</blockquote>
+<p>可以选择现有的rvm版本来进行安装（下面以rvm 2.4.1版本的安装为例）</p>
+<blockquote>
+<p>$ rvm install 2.4</p>
+</blockquote>
+<p>同样继续等待漫长的下载，编译过程，完成以后，Ruby, Ruby Gems 就安装好了。</p>
+<p>卸载一个已安装版本</p>
+<blockquote>
+<p>$ rvm remove 2.4.1</p>
+</blockquote>
+<p>设置Ruby版本</p>
+<p>RVM 装好以后，将指定版本的 Ruby 设置为系统默认版本(同样，也可以用其他版本号，前提是你有用 rvm install 安装过那个版本)</p>
+<blockquote>
+<p>$ rvm 2.4.1 –default</p>
+</blockquote>
+<p>查看Ruby</p>
+<blockquote>
+<p>$ ruby -v</p>
+</blockquote>
+<p>ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin17]</p>
+<p><code>RubyGems镜像地址设置</code></p>
+<p>查看</p>
+<blockquote>
+<p>$ gem sources -l</p>
+</blockquote>
+<p><strong><em> CURRENT SOURCES </em></strong></p>
+<p><a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a></p>
+<p>国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的：</p>
+<p>删除原地址</p>
+<blockquote>
+<p>$gem sources -remove<a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a></p>
+</blockquote>
+<p>添加新地址</p>
+<blockquote>
+<p>$ gem source -add <a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a></p>
+</blockquote>
+<p>查看</p>
+<blockquote>
+<p>$ gem sources -l</p>
+</blockquote>
+<p><strong><em> CURRENT SOURCES </em></strong></p>
+<p><a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a><br>```</p>
+<p>到这里就已经把Ruby环境成功的安装到了Mac OS X上，接下来就可以进行相应的开发使用了。</p>
+<p>查看gem版本</p>
+<blockquote>
+<p>$ gem -v</p>
+</blockquote>
+<p>2.6.14</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/12/Ruby安装/" data-id="cjfw8p1ac00007t6nz1usmcka" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-AS 3.1问题总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/29/AS 3.1问题总结/" class="article-date">
@@ -363,8 +464,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>进入根目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /</span><br></pre></td></tr></table></figure></p>
-<p>返回上上层目录(中间没用空格)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ../ ../</span><br></pre></td></tr></table></figure></p>
+        <h1 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ls　 查看当前终端目录下面的文件</span><br><span class="line">　　1.ls -a　　&quot;ls -a&quot;会出现一些带.xxxx的文件名，列出所有内容，包括隐藏的文件和目录</span><br><span class="line">　　2.ls -l　　 列出长格式的目录的所有内容，内容如下.以空格区分</span><br><span class="line">          1.访问权。这些是在文件或目录中允许的操作。</span><br><span class="line">          2.硬链接数。此数字计算子目录和文件的数量。这个数字包括父目录link（..）和当前目录link（.）。</span><br><span class="line">          3.文件所有者的用户名</span><br><span class="line">          4.拥有该文件的组的名称</span><br><span class="line">          5.文件的大小（以字节为单位）。</span><br><span class="line">          6.文件上次修改的日期和时间。</span><br><span class="line">          7.文件或目录的名称。</span><br><span class="line">　　3.ls -t      在上次修改之前订购文件和目录。</span><br><span class="line">   4.ls -alt     这种子命令可以放在一起输出,如‘-alt’会把a和l和t所有都输出</span><br></pre></td></tr></table></figure>
+<p>进入根目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /</span><br></pre></td></tr></table></figure></p>
+<p>返回上上层目录(中间没用空格)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ../../</span><br></pre></td></tr></table></figure></p>
 <p>4）进入用户目录（～）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~</span><br></pre></td></tr></table></figure></p>
 <p>命令<code>whereis</code>表示：查找某程序的路径（比如gcc如下）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$whereis</span><br><span class="line">$ whereis gcc</span><br><span class="line">输入结果：/usr/bin/gcc</span><br></pre></td></tr></table></figure></p>
 <p>历史命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shift+cmd+h</span><br></pre></td></tr></table></figure></p>
@@ -377,8 +479,10 @@
 <p>建立新文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch 文件名        </span><br><span class="line">     例：在当前目录下建一个备份文件 backup：touch backup.txt</span><br></pre></td></tr></table></figure></p>
 <p>删除文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm  参数  文件     参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了</span><br><span class="line">    rm   + 空格  + 文件名和格式     表示删除一个文件</span><br><span class="line">    rm   + -r   + 文件夹          表示强制删除文件夹中包含文件的文件夹(当文件夹中包含有文件, 通过&quot;rmdir + 空格+ 文件夹名&quot;的方式                                   是删不掉文件夹的,只有通过&quot;rm + -f + 文件夹名&quot;,进行强制删除)</span><br><span class="line">    rm     + -rf    + 文件夹      表示强制删除文件夹中包含文件的文件夹(和&quot;rm + -r + 文件夹名&quot; 功能相同)</span><br><span class="line">    注意: rm 可以删除多个文件而不止一个文件 ,但是两个文件的路径必须用空格隔开.</span><br><span class="line">    例：想删除驱动的缓存：rm -rf /System/Library/Extensions.kextcache                                                    rm -rf /System/Library/Extensions.mkext</span><br></pre></td></tr></table></figure>
-<p>拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp 参数 源文件 目标文件        </span><br><span class="line">    例：想把桌面的 Natit.kext 拷贝到驱动目录中  cp -R /User/用户名/Desktop/Natit.kext  /System/Library/Extensions  </span><br><span class="line">       参数 R 表示对目录进行递归操作，kext 在图形界面下看起来是个文件，实际上是个文件夹。            </span><br><span class="line">       把驱动目录下的所有文件备份到桌面 backup：cp -R /System/Library/Extensions/ /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure></p>
+<p>拷贝 复制文件到另一个文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp 参数 源文件 目标文件        </span><br><span class="line">    例：想把桌面的 Natit.kext 拷贝到驱动目录中  cp -R /User/用户名/Desktop/Natit.kext  /System/Library/Extensions  </span><br><span class="line">       参数 R 表示对目录进行递归操作，kext 在图形界面下看起来是个文件，实际上是个文件夹。            </span><br><span class="line">       把驱动目录下的所有文件备份到桌面 backup：cp -R /System/Library/Extensions/ /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure></p>
 <p>移动文件和重命名文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv 源文件 目标文件</span><br><span class="line">      mv + 需要移动的文件或文件夹 + 空格 + 移动到的路径  (这里路径可以是相对路径,也可以是绝对路径);</span><br><span class="line">      mv  + a.c + 空格 +b.c    表示将a.c 重命名为b.c</span><br><span class="line">      例：想把 AppleHDA.Kext 移到桌面：mv /System/Library/Extensions/AppleHDA.kext  /User/用户名/Desktop</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo  输入内容,如: echo  &quot;hello world&quot;　　</span><br><span class="line">echo &quot;hello world&quot; &gt; hello.txt      创建一个txt格式文本其内容为&apos;hello world&apos;,想深入了解可以搜关键字“重定向”</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat   输出内容,如：cat  hello.txt</span><br><span class="line">cat hello.txt &gt; world.txt    将hello里面的内容覆盖掉world.txt里面，输出cat world.txt可查看</span><br><span class="line">cat hello.txt &gt;&gt; world.txt     将hello里面内容追加到world.txt后面</span><br></pre></td></tr></table></figure>
 <p>文本编辑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">nano 文件名</span><br><span class="line">        nano + 文件名 表示编辑文件内容</span><br><span class="line">        例：  </span><br><span class="line">            nano /System/Library/Extensions/Natit.kext/Info.plist</span><br><span class="line">        编辑完成后 用 Ctrl ＋O 存盘，Ctrl＋X 退出</span><br><span class="line">    注意:</span><br><span class="line">      * 在默认的&quot;指令模式&quot;下按 i 进入编辑模式</span><br><span class="line">      * 在非指令模式下按 ESC 返回指令模式</span><br><span class="line">      * 在&quot;指令模式&quot;下输入:</span><br><span class="line">        :w  保存当前文件</span><br><span class="line">        :q 退出编辑,如果文件为保存需要用强制模式</span><br><span class="line">        :q!	强制退出不保存修改</span><br><span class="line">        :wq	组合指令, 保存并退出</span><br><span class="line">      * 在&quot;指令模式&quot;下移动:</span><br><span class="line">        h	左</span><br><span class="line">        j	下</span><br><span class="line">        k	上</span><br><span class="line">        l	右</span><br></pre></td></tr></table></figure></p>
 <p>清屏<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure></p>
 <p>打开某个文件,文件夹或应用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">open</span><br><span class="line">     * 如果是open .则是打开当前命令里的目录，如果要打开指定的文件夹或者文件则格式为open 要打开的路径即可。(这里绝对路径或相对路径都可以)</span><br><span class="line">     * open命令可以在终端中开启应用，使用-n可以开启多个相同应用。比如你可以使用下面的命令开启新Safari窗口</span><br><span class="line">       open -n /Applications/Safari.app/</span><br></pre></td></tr></table></figure></p>
@@ -723,47 +827,6 @@
 
 
   
-    <article id="post-列表滚动条的显示与隐藏及自定义样式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/02/28/列表滚动条的显示与隐藏及自定义样式/" class="article-date">
-  <time datetime="2018-02-28T07:28:51.615Z" itemprop="datePublished">2018-02-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="列表滚动条的显示与隐藏及自定义滚动条样式"><a href="#列表滚动条的显示与隐藏及自定义滚动条样式" class="headerlink" title="列表滚动条的显示与隐藏及自定义滚动条样式"></a>列表滚动条的显示与隐藏及自定义滚动条样式</h1><h6 id="一、显示与隐藏"><a href="#一、显示与隐藏" class="headerlink" title="一、显示与隐藏"></a>一、显示与隐藏</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.v7.widget.RecyclerView</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;match_parent&quot;</span><br><span class="line">            android:scrollbars=&quot;vertical&quot;</span><br><span class="line">            &gt;</span><br><span class="line"></span><br><span class="line">        &lt;/android.support.v7.widget.RecyclerView&gt;</span><br></pre></td></tr></table></figure>
-<p>纵向显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=&quot;vertical&quot;</span><br></pre></td></tr></table></figure></p>
-<p>横向显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=&quot;horizontal&quot;</span><br></pre></td></tr></table></figure></p>
-<p>隐藏：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:scrollbars=&quot;none&quot;</span><br></pre></td></tr></table></figure></p>
-<h5 id="二、自定义滚动条效果样式"><a href="#二、自定义滚动条效果样式" class="headerlink" title="二、自定义滚动条效果样式"></a>二、自定义滚动条效果样式</h5><p>通过查看View属性，决定scrollbar的属性是<strong>android:scrollbarThumbVertical</strong>，这个属性是存在于View当中的，也就是说所有View，ViewGroup都能设置scrollbar。前提先设置滚动条显示。<br>好了，废话不多说，直接上效果图：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2953499-6ac19f4d4007a366.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/50" alt="header"></p>
-<p>再来看达到这个效果所需要的代码，在布局中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;android.support.v7.widget.RecyclerView</span><br><span class="line">android:id=&quot;@+id/test_listview&quot;</span><br><span class="line">android:layout_width=&quot;match_parent&quot;</span><br><span class="line">android:layout_height=&quot;match_parent&quot;</span><br><span class="line">android:scrollbarThumbVertical=&quot;@drawable/my_bar&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
-<p>再来看drawable目录下的my_bar.xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;solid android:color=&quot;#999999&quot;/&gt;    &lt;!--设置颜色--&gt;</span><br><span class="line">&lt;size android:width=&quot;4dp&quot;/&gt;  &lt;!--设置宽度--&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这么简单就实现啦！<br>什么？没有边框？没有圆角？<br>那么加上就是了，不就是个属性嘛：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;solid android:color=&quot;#999999&quot;/&gt;</span><br><span class="line">&lt;size android:width=&quot;4dp&quot;/&gt;</span><br><span class="line">&lt;corners android:radius=&quot;2dp&quot;/&gt;</span><br><span class="line">&lt;stroke android:color=&quot;#111111&quot;  android:width=&quot;2px&quot;/&gt;</span><br><span class="line">&lt;/shape&gt;</span><br></pre></td></tr></table></figure></p>
-<p>再来看看效果：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2953499-6125e5b403c21f7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/50" alt="header"></p>
-<p>我们再来和系统原生的scrollbar比较比较，发现原生的和右边边界有1px或2px的距离，而我们自定义的和右边是挨着的（在本文的图片中不好看出来，在真实的手机上能明显看到）。那么怎样才能达到那样的效果呢？<br>经过艰苦查找，终于发现了解决方法，将my_bar.xml稍作修改即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">&lt;item android:right=&quot;5dp&quot;&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;solid android:color=&quot;#999999&quot;/&gt;</span><br><span class="line">&lt;corners android:radius=&quot;2dp&quot;/&gt;</span><br><span class="line">&lt;stroke android:color=&quot;#111111&quot;    android:width=&quot;2px&quot;/&gt;</span><br><span class="line">&lt;size android:width=&quot;4dp&quot;/&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure></p>
-<p>来看看效果图：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2953499-3a900196abd21a11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/47" alt="header"></p>
-<p>更改属性 with  可以调整滚动条的宽度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;size android:width=&quot;2dp&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/列表滚动条的显示与隐藏及自定义样式/" data-id="cjfc9g4u0000o656n3mnwlpji" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -801,7 +864,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
   </div>
 
@@ -812,6 +875,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/12/Ruby安装/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/03/29/AS 3.1问题总结/">(no title)</a>
@@ -827,10 +894,6 @@
         
           <li>
             <a href="/2018/03/22/设计模式原则/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
           </li>
         
       </ul>

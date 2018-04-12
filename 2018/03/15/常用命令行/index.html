@@ -7,16 +7,16 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="进入根目录1$ cd / 返回上上层目录(中间没用空格)1$ cd ../ ../ 4）进入用户目录（～）1$ cd ~ 命令whereis表示：查找某程序的路径（比如gcc如下）123$whereis$ whereis gcc输入结果：/usr/bin/gcc 历史命令行1shift+cmd+h 终端 退出相关的几个命令1234567ctrl-z 挂起正在运行的进程ctrl-d 发送EOFctr">
+  <meta name="description" content="常用命令行123456789101112ls　 查看当前终端目录下面的文件　　1.ls -a　　&amp;quot;ls -a&amp;quot;会出现一些带.xxxx的文件名，列出所有内容，包括隐藏的文件和目录　　2.ls -l　　 列出长格式的目录的所有内容，内容如下.以空格区分          1.访问权。这些是在文件或目录中允许的操作。          2.硬链接数。此数字计算子目录和文件的数量。这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/常用命令行/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="进入根目录1$ cd / 返回上上层目录(中间没用空格)1$ cd ../ ../ 4）进入用户目录（～）1$ cd ~ 命令whereis表示：查找某程序的路径（比如gcc如下）123$whereis$ whereis gcc输入结果：/usr/bin/gcc 历史命令行1shift+cmd+h 终端 退出相关的几个命令1234567ctrl-z 挂起正在运行的进程ctrl-d 发送EOFctr">
-<meta property="og:updated_time" content="2018-03-22T08:26:08.872Z">
+<meta property="og:description" content="常用命令行123456789101112ls　 查看当前终端目录下面的文件　　1.ls -a　　&amp;quot;ls -a&amp;quot;会出现一些带.xxxx的文件名，列出所有内容，包括隐藏的文件和目录　　2.ls -l　　 列出长格式的目录的所有内容，内容如下.以空格区分          1.访问权。这些是在文件或目录中允许的操作。          2.硬链接数。此数字计算子目录和文件的数量。这个">
+<meta property="og:updated_time" content="2018-03-30T03:00:03.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="进入根目录1$ cd / 返回上上层目录(中间没用空格)1$ cd ../ ../ 4）进入用户目录（～）1$ cd ~ 命令whereis表示：查找某程序的路径（比如gcc如下）123$whereis$ whereis gcc输入结果：/usr/bin/gcc 历史命令行1shift+cmd+h 终端 退出相关的几个命令1234567ctrl-z 挂起正在运行的进程ctrl-d 发送EOFctr">
+<meta name="twitter:description" content="常用命令行123456789101112ls　 查看当前终端目录下面的文件　　1.ls -a　　&amp;quot;ls -a&amp;quot;会出现一些带.xxxx的文件名，列出所有内容，包括隐藏的文件和目录　　2.ls -l　　 列出长格式的目录的所有内容，内容如下.以空格区分          1.访问权。这些是在文件或目录中允许的操作。          2.硬链接数。此数字计算子目录和文件的数量。这个">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -75,8 +75,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>进入根目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /</span><br></pre></td></tr></table></figure></p>
-<p>返回上上层目录(中间没用空格)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ../ ../</span><br></pre></td></tr></table></figure></p>
+        <h1 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ls　 查看当前终端目录下面的文件</span><br><span class="line">　　1.ls -a　　&quot;ls -a&quot;会出现一些带.xxxx的文件名，列出所有内容，包括隐藏的文件和目录</span><br><span class="line">　　2.ls -l　　 列出长格式的目录的所有内容，内容如下.以空格区分</span><br><span class="line">          1.访问权。这些是在文件或目录中允许的操作。</span><br><span class="line">          2.硬链接数。此数字计算子目录和文件的数量。这个数字包括父目录link（..）和当前目录link（.）。</span><br><span class="line">          3.文件所有者的用户名</span><br><span class="line">          4.拥有该文件的组的名称</span><br><span class="line">          5.文件的大小（以字节为单位）。</span><br><span class="line">          6.文件上次修改的日期和时间。</span><br><span class="line">          7.文件或目录的名称。</span><br><span class="line">　　3.ls -t      在上次修改之前订购文件和目录。</span><br><span class="line">   4.ls -alt     这种子命令可以放在一起输出,如‘-alt’会把a和l和t所有都输出</span><br></pre></td></tr></table></figure>
+<p>进入根目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /</span><br></pre></td></tr></table></figure></p>
+<p>返回上上层目录(中间没用空格)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ../../</span><br></pre></td></tr></table></figure></p>
 <p>4）进入用户目录（～）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~</span><br></pre></td></tr></table></figure></p>
 <p>命令<code>whereis</code>表示：查找某程序的路径（比如gcc如下）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$whereis</span><br><span class="line">$ whereis gcc</span><br><span class="line">输入结果：/usr/bin/gcc</span><br></pre></td></tr></table></figure></p>
 <p>历史命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shift+cmd+h</span><br></pre></td></tr></table></figure></p>
@@ -89,8 +90,10 @@
 <p>建立新文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch 文件名        </span><br><span class="line">     例：在当前目录下建一个备份文件 backup：touch backup.txt</span><br></pre></td></tr></table></figure></p>
 <p>删除文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm  参数  文件     参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了</span><br><span class="line">    rm   + 空格  + 文件名和格式     表示删除一个文件</span><br><span class="line">    rm   + -r   + 文件夹          表示强制删除文件夹中包含文件的文件夹(当文件夹中包含有文件, 通过&quot;rmdir + 空格+ 文件夹名&quot;的方式                                   是删不掉文件夹的,只有通过&quot;rm + -f + 文件夹名&quot;,进行强制删除)</span><br><span class="line">    rm     + -rf    + 文件夹      表示强制删除文件夹中包含文件的文件夹(和&quot;rm + -r + 文件夹名&quot; 功能相同)</span><br><span class="line">    注意: rm 可以删除多个文件而不止一个文件 ,但是两个文件的路径必须用空格隔开.</span><br><span class="line">    例：想删除驱动的缓存：rm -rf /System/Library/Extensions.kextcache                                                    rm -rf /System/Library/Extensions.mkext</span><br></pre></td></tr></table></figure>
-<p>拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp 参数 源文件 目标文件        </span><br><span class="line">    例：想把桌面的 Natit.kext 拷贝到驱动目录中  cp -R /User/用户名/Desktop/Natit.kext  /System/Library/Extensions  </span><br><span class="line">       参数 R 表示对目录进行递归操作，kext 在图形界面下看起来是个文件，实际上是个文件夹。            </span><br><span class="line">       把驱动目录下的所有文件备份到桌面 backup：cp -R /System/Library/Extensions/ /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure></p>
+<p>拷贝 复制文件到另一个文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp 参数 源文件 目标文件        </span><br><span class="line">    例：想把桌面的 Natit.kext 拷贝到驱动目录中  cp -R /User/用户名/Desktop/Natit.kext  /System/Library/Extensions  </span><br><span class="line">       参数 R 表示对目录进行递归操作，kext 在图形界面下看起来是个文件，实际上是个文件夹。            </span><br><span class="line">       把驱动目录下的所有文件备份到桌面 backup：cp -R /System/Library/Extensions/ /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure></p>
 <p>移动文件和重命名文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv 源文件 目标文件</span><br><span class="line">      mv + 需要移动的文件或文件夹 + 空格 + 移动到的路径  (这里路径可以是相对路径,也可以是绝对路径);</span><br><span class="line">      mv  + a.c + 空格 +b.c    表示将a.c 重命名为b.c</span><br><span class="line">      例：想把 AppleHDA.Kext 移到桌面：mv /System/Library/Extensions/AppleHDA.kext  /User/用户名/Desktop</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo  输入内容,如: echo  &quot;hello world&quot;　　</span><br><span class="line">echo &quot;hello world&quot; &gt; hello.txt      创建一个txt格式文本其内容为&apos;hello world&apos;,想深入了解可以搜关键字“重定向”</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat   输出内容,如：cat  hello.txt</span><br><span class="line">cat hello.txt &gt; world.txt    将hello里面的内容覆盖掉world.txt里面，输出cat world.txt可查看</span><br><span class="line">cat hello.txt &gt;&gt; world.txt     将hello里面内容追加到world.txt后面</span><br></pre></td></tr></table></figure>
 <p>文本编辑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">nano 文件名</span><br><span class="line">        nano + 文件名 表示编辑文件内容</span><br><span class="line">        例：  </span><br><span class="line">            nano /System/Library/Extensions/Natit.kext/Info.plist</span><br><span class="line">        编辑完成后 用 Ctrl ＋O 存盘，Ctrl＋X 退出</span><br><span class="line">    注意:</span><br><span class="line">      * 在默认的&quot;指令模式&quot;下按 i 进入编辑模式</span><br><span class="line">      * 在非指令模式下按 ESC 返回指令模式</span><br><span class="line">      * 在&quot;指令模式&quot;下输入:</span><br><span class="line">        :w  保存当前文件</span><br><span class="line">        :q 退出编辑,如果文件为保存需要用强制模式</span><br><span class="line">        :q!	强制退出不保存修改</span><br><span class="line">        :wq	组合指令, 保存并退出</span><br><span class="line">      * 在&quot;指令模式&quot;下移动:</span><br><span class="line">        h	左</span><br><span class="line">        j	下</span><br><span class="line">        k	上</span><br><span class="line">        l	右</span><br></pre></td></tr></table></figure></p>
 <p>清屏<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear</span><br></pre></td></tr></table></figure></p>
 <p>打开某个文件,文件夹或应用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">open</span><br><span class="line">     * 如果是open .则是打开当前命令里的目录，如果要打开指定的文件夹或者文件则格式为open 要打开的路径即可。(这里绝对路径或相对路径都可以)</span><br><span class="line">     * open命令可以在终端中开启应用，使用-n可以开启多个相同应用。比如你可以使用下面的命令开启新Safari窗口</span><br><span class="line">       open -n /Applications/Safari.app/</span><br></pre></td></tr></table></figure></p>
@@ -157,7 +160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
   </div>
 
@@ -168,6 +171,10 @@
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/12/Ruby安装/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/03/29/AS 3.1问题总结/">(no title)</a>
@@ -183,10 +190,6 @@
         
           <li>
             <a href="/2018/03/22/设计模式原则/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/19/MAC go 开发Android应用环境设置/">(no title)</a>
           </li>
         
       </ul>

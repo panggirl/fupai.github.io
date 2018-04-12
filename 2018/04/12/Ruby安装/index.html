@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Mac OS 系统安装 Ruby 环境安装RVM RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。  $ curl -L https://get.rvm.io | bash -s stable  期间可能会问你sudo管理员密码，以及自动通过homebrew安装依赖包，等待一段时间后就可以成功安装好 RVM。 然后，载入 RVM 环境（新开 Termal 就不用这么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/04/12/Ruby安装/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Mac OS 系统安装 Ruby 环境安装RVM RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。  $ curl -L https://get.rvm.io | bash -s stable  期间可能会问你sudo管理员密码，以及自动通过homebrew安装依赖包，等待一段时间后就可以成功安装好 RVM。 然后，载入 RVM 环境（新开 Termal 就不用这么">
+<meta property="og:image" content="https://img-blog.csdn.net/20171214145207010?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWNmMDMyMTEyMzA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-04-12T08:04:36.895Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Mac OS 系统安装 Ruby 环境安装RVM RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。  $ curl -L https://get.rvm.io | bash -s stable  期间可能会问你sudo管理员密码，以及自动通过homebrew安装依赖包，等待一段时间后就可以成功安装好 RVM。 然后，载入 RVM 环境（新开 Termal 就不用这么">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20171214145207010?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWNmMDMyMTEyMzA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ruby安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/12/Ruby安装/" class="article-date">
+  <time datetime="2018-04-12T07:42:01.623Z" itemprop="datePublished">2018-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mac-OS-系统安装-Ruby-环境"><a href="#Mac-OS-系统安装-Ruby-环境" class="headerlink" title="Mac OS 系统安装 Ruby 环境"></a>Mac OS 系统安装 Ruby 环境</h1><p><code>安装RVM</code></p>
+<p>RVM 是一个命令行工具，可以提供一个便捷的多版本 Ruby 环境的管理和切换。</p>
+<blockquote>
+<p>$ curl -L <a href="https://get.rvm.io" target="_blank" rel="noopener">https://get.rvm.io</a> | bash -s stable</p>
+</blockquote>
+<p>期间可能会问你sudo管理员密码，以及自动通过homebrew安装依赖包，等待一段时间后就可以成功安装好 RVM。</p>
+<p>然后，载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）</p>
+<blockquote>
+<p>$ source ~/.rvm/scripts/rvm</p>
+</blockquote>
+<p><code>检查一下是否安装正确 查看rvm</code></p>
+<blockquote>
+<p>$ rvm -v</p>
+</blockquote>
+<p>在终端输入rvm -v 一直提示“-bash: rvm: command not found’”</p>
+<p>于是重新安装rvm，其命令是：curl -L get.rvm.io | bash -s stable</p>
+<p>在安装时一直提示如下<br>这里写图片描述<br><img src="https://img-blog.csdn.net/20171214145207010?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWNmMDMyMTEyMzA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* WARNING: &apos;~/.profile&apos; file found. To load it into your shell, add the following line to &apos;/Users/youchunfen/.bash_profile&apos;:</span><br><span class="line"></span><br><span class="line">     source ~/.profile</span><br></pre></td></tr></table></figure></p>
+<p>之前没仔细看这个提示，一直在查，找的N多方法都不对～～～～<br>提示已经告诉我们了 ：打开.bash_profile文件，将“source ~/.profile”添加到里面去即可,然后再次安装下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、curl -L get.rvm.io | bash -s stable</span><br><span class="line">2、source ~/.bashrc</span><br><span class="line">3、source ~/.bash_profile</span><br><span class="line">4、rvm -v</span><br></pre></td></tr></table></figure></p>
+<p>rvm 1.29.3 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [<a href="https://rvm.io" target="_blank" rel="noopener">https://rvm.io</a>]</p>
+<p><code>用RVM安装Ruby环境</code></p>
+<p>查询已经安装的ruby</p>
+<blockquote>
+<p>$ rvm list</p>
+</blockquote>
+<p>列出已知的ruby版本</p>
+<blockquote>
+<p>$ rvm list known</p>
+</blockquote>
+<p>可以选择现有的rvm版本来进行安装（下面以rvm 2.4.1版本的安装为例）</p>
+<blockquote>
+<p>$ rvm install 2.4</p>
+</blockquote>
+<p>同样继续等待漫长的下载，编译过程，完成以后，Ruby, Ruby Gems 就安装好了。</p>
+<p>卸载一个已安装版本</p>
+<blockquote>
+<p>$ rvm remove 2.4.1</p>
+</blockquote>
+<p>设置Ruby版本</p>
+<p>RVM 装好以后，将指定版本的 Ruby 设置为系统默认版本(同样，也可以用其他版本号，前提是你有用 rvm install 安装过那个版本)</p>
+<blockquote>
+<p>$ rvm 2.4.1 –default</p>
+</blockquote>
+<p>查看Ruby</p>
+<blockquote>
+<p>$ ruby -v</p>
+</blockquote>
+<p>ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin17]</p>
+<p><code>RubyGems镜像地址设置</code></p>
+<p>查看</p>
+<blockquote>
+<p>$ gem sources -l</p>
+</blockquote>
+<p><strong><em> CURRENT SOURCES </em></strong></p>
+<p><a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a></p>
+<p>国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的：</p>
+<p>删除原地址</p>
+<blockquote>
+<p>$gem sources -remove<a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a></p>
+</blockquote>
+<p>添加新地址</p>
+<blockquote>
+<p>$ gem source -add <a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a></p>
+</blockquote>
+<p>查看</p>
+<blockquote>
+<p>$ gem sources -l</p>
+</blockquote>
+<p><strong><em> CURRENT SOURCES </em></strong></p>
+<p><a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a><br>```</p>
+<p>到这里就已经把Ruby环境成功的安装到了Mac OS X上，接下来就可以进行相应的开发使用了。</p>
+<p>查看gem版本</p>
+<blockquote>
+<p>$ gem -v</p>
+</blockquote>
+<p>2.6.14</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/12/Ruby安装/" data-id="cjfw8p1ac00007t6nz1usmcka" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/29/AS 3.1问题总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac-GitHub-Page-搭建博客/">Mac GitHub Page 搭建博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/概念/">概念</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Mac-GitHub-Page-搭建博客/" style="font-size: 10px;">Mac GitHub Page 搭建博客</a> <a href="/tags/概念/" style="font-size: 10px;">概念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/12/Ruby安装/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/29/AS 3.1问题总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/29/升级 AS 到 3.1 报绝对路径问题错误/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/知识点/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/22/设计模式原则/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
